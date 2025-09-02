@@ -35,7 +35,7 @@ export const Header = () => {
         }} transition={{
           duration: 0.2
         }}>
-            <img src="/lovable-uploads/Logos/Realm101furtrans.png" alt="Realm 101 Logo" className="w-8 h-8 object-contain" />
+            <img src="/realm101-logo.png" alt="Realm 101 Logo" className="w-8 h-8 object-contain" />
             
           </motion.div>
 
