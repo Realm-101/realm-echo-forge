@@ -94,6 +94,12 @@ export const EcosystemOverview = () => {
                           src={tool.logoSrc} 
                           alt={`${tool.name} logo`}
                           className="w-full h-full object-contain"
+                          onError={(e) => {
+                            console.error(`Failed to load logo: ${tool.logoSrc}`, e);
+                          }}
+                          onLoad={() => {
+                            console.log(`Successfully loaded logo: ${tool.logoSrc}`);
+                          }}
                         />
                       </div>
                       <div>
