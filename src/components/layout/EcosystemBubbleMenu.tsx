@@ -17,7 +17,7 @@ const tools = [
     logoSrc: "/lovable-uploads/Logos/Stackfast.png",
     href: "/stackfast",
     color: "from-blue-500 to-purple-600",
-    position: { x: -180, y: -80 },
+    position: { x: -150, y: -40 },
   },
   {
     name: "Unbuilt feat. the EurekaShelf",
@@ -25,7 +25,7 @@ const tools = [
     logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
-    position: { x: 180, y: -80 },
+    position: { x: 150, y: -40 },
   },
   {
     name: "VentureClone AI",
@@ -33,7 +33,7 @@ const tools = [
     logoSrc: "/lovable-uploads/Logos/VC2.png",
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
-    position: { x: -180, y: 120 },
+    position: { x: -150, y: 100 },
   },
   {
     name: "RepoRadar",
@@ -41,7 +41,7 @@ const tools = [
     logoSrc: "/lovable-uploads/Logos/Reporadar.png",
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
-    position: { x: 180, y: 120 },
+    position: { x: 150, y: 100 },
   },
 ];
 
