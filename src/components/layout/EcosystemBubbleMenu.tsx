@@ -69,7 +69,8 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
           <div className="relative">
             {/* Background Circle - positioned behind everything */}
             <motion.div
-              className="absolute left-1/2 top-1/2 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-400/15 via-purple-500/20 to-indigo-600/15 backdrop-blur-sm border border-white/10 shadow-2xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/8 before:via-transparent before:to-rose-400/8 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/10 after:via-transparent after:to-cyan-400/10 -z-10"
+              className="absolute left-1/2 top-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-400/30 via-purple-500/40 to-indigo-600/30 backdrop-blur-sm border border-white/30 shadow-2xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/20 before:via-transparent before:to-rose-400/20 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/25 after:via-transparent after:to-cyan-400/25"
+              style={{ zIndex: -1 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
