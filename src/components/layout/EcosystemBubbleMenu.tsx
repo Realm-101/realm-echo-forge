@@ -171,7 +171,7 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
 
             {/* Center Logo */}
             <motion.div
-              className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center shadow-lg p-3"
+              className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center shadow-lg p-3"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
