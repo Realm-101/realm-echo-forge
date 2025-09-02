@@ -147,7 +147,11 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
                   
                   {/* Tool Info */}
                   <motion.div
-                    className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 text-center"
+                    className={`absolute top-full mt-2 text-center ${
+                      tool.position.x > 0 
+                        ? 'right-0 transform translate-x-0' 
+                        : 'left-1/2 transform -translate-x-1/2'
+                    }`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
