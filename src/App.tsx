@@ -4,6 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import StackStudio from "./pages/StackStudio";
+import Unbuilt from "./pages/Unbuilt";
+import VentureCloneAI from "./pages/VentureCloneAI";
+import RepoRadar from "./pages/RepoRadar";
+import StackFast from "./pages/StackFast";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,6 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/stackstudio" element={<StackStudio />} />
+          <Route path="/unbuilt" element={<Unbuilt />} />
+          <Route path="/ventureclone-ai" element={<VentureCloneAI />} />
+          <Route path="/reporadar" element={<RepoRadar />} />
+          <Route path="/stackfast" element={<StackFast />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
