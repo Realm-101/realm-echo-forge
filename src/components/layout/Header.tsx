@@ -41,17 +41,29 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map(link => <motion.a key={link.name} href={link.href} className="text-foreground hover:text-accent transition-colors duration-200 font-body" whileHover={{
-            y: -2
-          }} transition={{
-            duration: 0.2
-          }}>
-                {link.name}
-              </motion.a>)}
-            
-            <Button variant="fur" onClick={() => setIsBubbleMenuOpen(true)} className="font-body">
-              Ecosystem Tools
-            </Button>
+            {navLinks.map(link => 
+              link.name === "Ecosystem" ? (
+                <motion.button
+                  key={link.name}
+                  onClick={() => setIsBubbleMenuOpen(true)}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body cursor-pointer bg-transparent border-none"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {link.name}
+                </motion.button>
+              ) : (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {link.name}
+                </motion.a>
+              )
+            )}
             
             <Button variant="fur" size="sm" className="font-body">
               Start Building
@@ -79,16 +91,29 @@ export const Header = () => {
           duration: 0.3
         }}>
               <div className="flex flex-col space-y-4">
-                {navLinks.map(link => <a key={link.name} href={link.href} className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2" onClick={() => setIsMenuOpen(false)}>
-                    {link.name}
-                  </a>)}
-                
-                <Button variant="fur" onClick={() => {
-              setIsBubbleMenuOpen(true);
-              setIsMenuOpen(false);
-            }} className="w-full font-body">
-                  Ecosystem Tools
-                </Button>
+                {navLinks.map(link => 
+                  link.name === "Ecosystem" ? (
+                    <button
+                      key={link.name}
+                      onClick={() => {
+                        setIsBubbleMenuOpen(true);
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2 text-left bg-transparent border-none cursor-pointer"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  )
+                )}
                 
                 <Button variant="fur" className="w-full font-body">
                   Start Building
