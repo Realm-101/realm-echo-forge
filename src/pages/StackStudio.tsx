@@ -4,8 +4,9 @@ import { BlurInText } from "@/components/interactive/BlurInText";
 import { MagneticButton } from "@/components/interactive/MagneticButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import { Code, GitBranch, Users, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { Code, GitBranch, Users, Zap, CheckCircle, ArrowRight, Play } from "lucide-react";
 
 const features = [
   {
@@ -40,6 +41,29 @@ const benefits = [
 ];
 
 const StackStudio = () => {
+  const { toast } = useToast();
+
+  const handleStartBuilding = () => {
+    toast({
+      title: "Coming Soon!",
+      description: "StackStudio will be available shortly.",
+    });
+  };
+
+  const handleViewDemo = () => {
+    toast({
+      title: "Coming Soon!",
+      description: "The demo video will be available shortly.",
+    });
+  };
+
+  const handleGetStarted = () => {
+    toast({
+      title: "Coming Soon!",
+      description: "StackStudio will be available shortly.",
+    });
+  };
+
   return (
     <div className="min-h-screen font-body">
       <Header />
@@ -82,12 +106,22 @@ const StackStudio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-                <MagneticButton variant="hero" size="xl" className="group">
+                <MagneticButton 
+                  variant="hero" 
+                  size="xl" 
+                  className="group"
+                  onClick={handleStartBuilding}
+                >
                   Start Building
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
                 
-                <Button variant="outline" size="xl">
+                <Button 
+                  variant="outline" 
+                  size="xl"
+                  onClick={handleViewDemo}
+                >
+                  <Play className="mr-2 h-5 w-5" />
                   View Demo
                 </Button>
               </motion.div>
@@ -190,6 +224,7 @@ const StackStudio = () => {
               variant="outline"
               size="xl"
               className="bg-white text-primary hover:bg-white/90"
+              onClick={handleGetStarted}
             >
               Get Started Free
             </MagneticButton>
