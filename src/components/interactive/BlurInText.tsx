@@ -53,7 +53,28 @@ export const BlurInText = ({ text, className, delay = 0 }: BlurInTextProps) => {
           variants={child}
           className="inline-block mr-2"
         >
-          {word}
+          {word === "StackStudio," ? (
+            <>
+              <video 
+                src="/lovable-uploads/kling_20250901_Image_to_Video_The_vibran_617_3.mp4"
+                className="inline w-16 h-10 object-cover rounded"
+                autoPlay
+                loop
+                muted
+              />
+              ,
+            </>
+          ) : word === "StackStudio" ? (
+            <video 
+              src="/lovable-uploads/kling_20250901_Image_to_Video_The_vibran_617_3.mp4"
+              className="inline w-16 h-10 object-cover rounded"
+              autoPlay
+              loop
+              muted
+            />
+          ) : (
+            word
+          )}
         </motion.span>
       ))}
     </motion.div>
