@@ -8,45 +8,40 @@ import { BlurInText } from "@/components/interactive/BlurInText";
 
 const tools = [
   {
-    name: "StackStudio",
-    description: "Complete full-stack development platform with integrated workflows, collaborative features, and deployment automation.",
-    icon: Code,
-    features: ["Integrated IDE", "Team Collaboration", "Auto Deploy"],
-    href: "/stackstudio",
+    name: "StackFast",
+    description: "AI-powered launchpad with compatibility insights to eliminate complexity in project setup. Currently in Alpha phase.",
+    icon: Rocket,
+    features: ["Alpha Phase", "AI Compatibility", "Project Setup"],
+    href: "/stackfast",
     color: "from-blue-500 to-purple-600",
+    isAlpha: true,
   },
   {
-    name: "Unbuilt",
-    description: "Rapid prototyping and ideation tool that transforms concepts into working prototypes in minutes.",
+    name: "Unbuilt feat. the EurekaShelf",
+    description: "End-to-end innovation platform to discover market gaps, validate ideas, and generate investor-ready pitch decks. Alpha phase.",
     icon: Zap,
-    features: ["Rapid Prototyping", "Visual Design", "Quick Deploy"],
+    features: ["Alpha Phase", "Market Research", "Pitch Decks"],
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
-  },
-  {
-    name: "VentureClone AI",
-    description: "AI-powered business idea generator that analyzes markets and creates comprehensive business plans.",
-    icon: Bot,
-    features: ["AI-Powered Ideas", "Market Analysis", "Business Plans"],
-    href: "/ventureclone-ai",
-    color: "from-purple-500 to-pink-600",
+    isAlpha: true,
   },
   {
     name: "RepoRadar",
-    description: "Advanced code repository analysis tool for optimization, security scanning, and performance insights.",
+    description: "AI-powered intelligence platform to discover, compare, and evaluate GitHub repositories on metrics like originality and monetization potential. Alpha phase.",
     icon: Radar,
-    features: ["Code Analysis", "Security Scan", "Performance Metrics"],
+    features: ["Alpha Phase", "GitHub Analysis", "AI Intelligence"],
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
+    isAlpha: true,
   },
   {
-    name: "StackFast",
-    description: "Coming soon - Revolutionary development acceleration platform for lightning-fast project delivery.",
-    icon: Rocket,
-    features: ["Coming Soon", "Speed Focused", "Performance First"],
-    href: "/stackfast",
-    color: "from-gray-500 to-gray-600",
-    isComingSoon: true,
+    name: "VentureClone AI",
+    description: "Platform that analyzes existing online businesses for 'clone potential,' guiding users from discovery to a launch-ready blueprint. Alpha phase.",
+    icon: Bot,
+    features: ["Alpha Phase", "Business Analysis", "Clone Potential"],
+    href: "/ventureclone-ai",
+    color: "from-purple-500 to-pink-600",
+    isAlpha: true,
   },
 ];
 
@@ -63,7 +58,7 @@ export const EcosystemOverview = () => {
             viewport={{ once: true }}
           >
             <BlurInText
-              text="Complete Development Ecosystem"
+              text="The StackStudio Ecosystem"
               className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-primary mb-6"
             />
           </motion.div>
@@ -75,8 +70,7 @@ export const EcosystemOverview = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            From ideation to deployment, our comprehensive suite of tools covers every aspect of modern development. 
-            Build faster, deploy smarter, and scale with confidence.
+            StackStudio unifies tools, resources, and learning into one cohesive experience. Our growing collection of Alpha-phase applications work together to make software development accessible and empowering for everyone.
           </motion.p>
         </div>
 
@@ -104,9 +98,9 @@ export const EcosystemOverview = () => {
                         <CardTitle className="text-xl font-heading text-primary">
                           {tool.name}
                         </CardTitle>
-                        {tool.isComingSoon && (
+                        {tool.isAlpha && (
                           <span className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full font-body">
-                            Coming Soon
+                            Alpha Phase
                           </span>
                         )}
                       </div>
@@ -131,19 +125,14 @@ export const EcosystemOverview = () => {
                     
                     {/* CTA Button */}
                     <Button
-                      variant={tool.isComingSoon ? "outline" : "default"}
+                      variant="default"
                       className="w-full group"
-                      disabled={tool.isComingSoon}
-                      asChild={!tool.isComingSoon}
+                      asChild
                     >
-                      {tool.isComingSoon ? (
-                        "Coming Soon"
-                      ) : (
-                        <a href={tool.href}>
-                          Learn More
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      )}
+                      <a href={tool.href}>
+                        Explore Alpha
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -161,7 +150,7 @@ export const EcosystemOverview = () => {
           viewport={{ once: true }}
         >
           <Button variant="hero" size="lg" className="group">
-            Explore All Tools
+            Explore the StackStudio Ecosystem
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </motion.div>

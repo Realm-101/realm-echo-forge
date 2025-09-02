@@ -14,7 +14,7 @@ export const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Hero Headline */}
           <BlurInText
-            text="Build, Deploy, Scale with Confidence"
+            text="Redefining the Development Playground"
             className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-primary mb-6"
           />
           
@@ -25,7 +25,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <BlurInText
-              text="Realm 101 is an inclusive development ecosystem that empowers every developer with premium tools and seamless workflows."
+              text="Realm 101 is a software and web development company. Our flagship project, StackStudio, is an inclusive development ecosystem that makes software development an accessible, empowering journey for everyone, from beginners to seasoned developers."
               className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 font-body leading-relaxed"
               delay={0.3}
             />
@@ -67,8 +67,8 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 1.6 }}
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent font-heading">5+</div>
-              <div className="text-sm text-muted-foreground font-body">Development Tools</div>
+              <div className="text-3xl font-bold text-accent font-heading">4</div>
+              <div className="text-sm text-muted-foreground font-body">Alpha Tools in StackStudio</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-accent font-heading">∞</div>
