@@ -73,29 +73,35 @@
     --background: var(--realm-background);
     --foreground: var(--realm-foreground);
     
-    --card: 0 0% 12%;
+    --card: 0 0% 10%;
     --card-foreground: var(--realm-foreground);
     
-    --popover: 0 0% 12%;
+    --popover: 0 0% 10%;
     --popover-foreground: var(--realm-foreground);
     
-    --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 0 0% 90%;
+    --primary-foreground: 0 0% 10%;
     
-    --secondary: 100 15% 15%;
+    --secondary: 0 0% 14%;
     --secondary-foreground: var(--realm-foreground);
     
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 70%;
     
-    --accent: 100 30% 50%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 100 30% 55%;
+    --accent-foreground: 0 0% 10%;
     
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    --destructive: 0 62% 65%;
+    --destructive-foreground: 0 0% 98%;
     
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%) 0%, hsl(0 0% 8%) 100%);
-    --shadow-premium: 0 20px 40px -10px hsl(0 0% 0% / 0.4);
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: var(--accent);
+    
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--accent)) 100%);
+    --shadow-premium: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
   }
 }
 

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { EcosystemBubbleMenu } from "./EcosystemBubbleMenu";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -40,7 +41,7 @@ export const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4">
             {navLinks.map(link => 
               link.name === "Ecosystem" ? (
                 <motion.button
@@ -65,15 +66,20 @@ export const Header = () => {
               )
             )}
             
+            <ThemeToggle />
+            
             <Button variant="fur" size="sm" className="font-body">
               Start Building
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </Button>
+          <div className="flex items-center space-x-2 md:hidden">
+            <ThemeToggle />
+            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
