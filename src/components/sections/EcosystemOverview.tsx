@@ -10,7 +10,7 @@ const tools = [
   {
     name: "StackFast",
     description: "AI-powered launchpad with compatibility insights to eliminate complexity in project setup. Currently in Alpha phase.",
-    logoSrc: "/lovable-uploads/Logos/Stackfast.png",
+    logoSrc: "/ lovable-uploads/Logos/Stackfast.png",
     features: ["Alpha Phase", "AI Compatibility", "Project Setup"],
     href: "/stackfast",
     color: "from-blue-500 to-purple-600",
@@ -19,7 +19,7 @@ const tools = [
   {
     name: "Unbuilt feat. the EurekaShelf",
     description: "End-to-end innovation platform to discover market gaps, validate ideas, and generate investor-ready pitch decks. Alpha phase.",
-    logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
+    logoSrc: "/ lovable-uploads/Logos/UNBUILT.png",
     features: ["Alpha Phase", "Market Research", "Pitch Decks"],
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
@@ -28,7 +28,7 @@ const tools = [
   {
     name: "RepoRadar",
     description: "AI-powered intelligence platform to discover, compare, and evaluate GitHub repositories on metrics like originality and monetization potential. Alpha phase.",
-    logoSrc: "/lovable-uploads/Logos/Reporadar.png",
+    logoSrc: "/ lovable-uploads/Logos/Reporadar.png",
     features: ["Alpha Phase", "GitHub Analysis", "AI Intelligence"],
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
@@ -37,7 +37,7 @@ const tools = [
   {
     name: "VentureClone AI",
     description: "Platform that analyzes existing online businesses for 'clone potential,' guiding users from discovery to a launch-ready blueprint. Alpha phase.",
-    logoSrc: "/lovable-uploads/Logos/VC2.png",
+    logoSrc: "/ lovable-uploads/Logos/VC2.png",
     features: ["Alpha Phase", "Business Analysis", "Clone Potential"],
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
