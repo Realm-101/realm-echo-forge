@@ -89,11 +89,11 @@ export const EcosystemOverview = () => {
                 <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
                   <CardHeader>
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className={`w-18 h-18 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center p-2`}>
+                      <div className="w-18 h-18 rounded-xl bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg relative overflow-hidden flex items-center justify-center p-2 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 after:via-transparent after:to-cyan-400/15">
                         <img 
                           src={tool.logoSrc} 
                           alt={`${tool.name} logo`}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain relative z-10"
                           onError={(e) => {
                             console.error(`Failed to load logo: ${tool.logoSrc}`, e);
                           }}
