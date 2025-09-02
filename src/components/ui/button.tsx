@@ -21,6 +21,7 @@ const buttonVariants = cva(
         hero: "bg-gradient-hero text-white hover:shadow-glow transition-all duration-300 border-0 font-medium",
         magnetic: "bg-realm-accent text-accent-foreground hover:shadow-magnetic transform hover:scale-105 transition-all duration-300 overflow-hidden relative",
         premium: "bg-gradient-primary text-white hover:shadow-premium border-0 transition-all duration-500",
+        fur: "relative overflow-hidden text-white hover:shadow-fur border-0 font-medium before:absolute before:inset-0 before:bg-gradient-fur-base after:absolute after:inset-0 after:bg-gradient-fur-layer1 after:mix-blend-overlay [&>span]:relative [&>span]:z-10 hover:scale-[1.02] transition-fur",
       },
       size: {
         default: "h-11 px-6 py-3",

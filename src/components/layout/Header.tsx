@@ -49,11 +49,11 @@ export const Header = () => {
                 {link.name}
               </motion.a>)}
             
-            <Button variant="outline" onClick={() => setIsBubbleMenuOpen(true)} className="font-body">
+            <Button variant="fur" onClick={() => setIsBubbleMenuOpen(true)} className="font-body">
               Ecosystem Tools
             </Button>
             
-            <Button variant="hero" size="sm" className="font-body">
+            <Button variant="fur" size="sm" className="font-body">
               Start Building
             </Button>
           </nav>
@@ -83,14 +83,14 @@ export const Header = () => {
                     {link.name}
                   </a>)}
                 
-                <Button variant="outline" onClick={() => {
+                <Button variant="fur" onClick={() => {
               setIsBubbleMenuOpen(true);
               setIsMenuOpen(false);
             }} className="w-full font-body">
                   Ecosystem Tools
                 </Button>
                 
-                <Button variant="hero" className="w-full font-body">
+                <Button variant="fur" className="w-full font-body">
                   Start Building
                 </Button>
               </div>
