@@ -32,9 +32,11 @@ export const Header = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">R</span>
-            </div>
+            <img 
+              src="/lovable-uploads/Logos/Realm101furtrans.png" 
+              alt="Realm 101 Logo" 
+              className="w-8 h-8 object-contain"
+            />
             <span className="text-xl font-heading font-bold text-primary">
               Realm 101
             </span>
