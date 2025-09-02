@@ -17,7 +17,7 @@ const tools = [
     logoSrc: "/lovable-uploads/Logos/Stackfast.png",
     href: "/stackfast",
     color: "from-blue-500 to-purple-600",
-    position: { x: -180, y: -120 },
+    position: { x: -180, y: -80 },
   },
   {
     name: "Unbuilt feat. the EurekaShelf",
@@ -25,7 +25,7 @@ const tools = [
     logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
-    position: { x: 180, y: -120 },
+    position: { x: 180, y: -80 },
   },
   {
     name: "VentureClone AI",
