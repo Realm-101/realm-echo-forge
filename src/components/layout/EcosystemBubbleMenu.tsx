@@ -14,7 +14,7 @@ const tools = [
   {
     name: "StackFast",
     description: "AI-powered launchpad",
-    logoSrc: "/ lovable-uploads/Logos/Stackfast.png",
+    logoSrc: "/lovable-uploads/Logos/Stackfast.png",
     href: "/stackfast",
     color: "from-blue-500 to-purple-600",
     position: { x: -200, y: -60 },
@@ -22,7 +22,7 @@ const tools = [
   {
     name: "Unbuilt feat. the EurekaShelf",
     description: "Innovation platform",
-    logoSrc: "/ lovable-uploads/Logos/UNBUILT.png",
+    logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
     position: { x: 200, y: -60 },
@@ -30,7 +30,7 @@ const tools = [
   {
     name: "VentureClone AI",
     description: "Business cloning platform",
-    logoSrc: "/ lovable-uploads/Logos/VC2.png",
+    logoSrc: "/lovable-uploads/Logos/VC2.png",
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
     position: { x: -200, y: 140 },
@@ -38,7 +38,7 @@ const tools = [
   {
     name: "RepoRadar",
     description: "GitHub intelligence",
-    logoSrc: "/ lovable-uploads/Logos/Reporadar.png",
+    logoSrc: "/lovable-uploads/Logos/Reporadar.png",
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
     position: { x: 200, y: 140 },
@@ -177,7 +177,7 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
               transition={{ delay: 0.3, duration: 0.5 }}
             >
               <img 
-                src="/ lovable-uploads/Logos/Stackstudio.png" 
+                src="/lovable-uploads/Logos/Stackstudio.png" 
                 alt="StackStudio logo"
                 className="w-full h-full object-contain relative z-10"
               />
