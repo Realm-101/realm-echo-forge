@@ -171,7 +171,7 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
 
             {/* Center Logo */}
             <motion.div
-              className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center shadow-lg p-3"
+              className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg flex items-center justify-center transition-all duration-300 relative overflow-hidden p-3 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 after:via-transparent after:to-cyan-400/15"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
@@ -179,7 +179,7 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
               <img 
                 src="/ lovable-uploads/Logos/Stackstudio.png" 
                 alt="StackStudio logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain relative z-10"
               />
             </motion.div>
           </div>
