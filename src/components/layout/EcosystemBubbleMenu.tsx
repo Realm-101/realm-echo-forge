@@ -17,7 +17,7 @@ const tools = [
     logoSrc: "/ lovable-uploads/Logos/Stackfast.png",
     href: "/stackfast",
     color: "from-blue-500 to-purple-600",
-    position: { x: -200, y: -60 },
+    position: { x: -280, y: -120 },
   },
   {
     name: "Unbuilt feat. the EurekaShelf",
@@ -25,7 +25,7 @@ const tools = [
     logoSrc: "/ lovable-uploads/Logos/UNBUILT.png",
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
-    position: { x: 200, y: -60 },
+    position: { x: 280, y: -120 },
   },
   {
     name: "VentureClone AI",
@@ -33,7 +33,7 @@ const tools = [
     logoSrc: "/ lovable-uploads/Logos/VC2.png",
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
-    position: { x: -200, y: 140 },
+    position: { x: -280, y: 180 },
   },
   {
     name: "RepoRadar",
@@ -41,7 +41,7 @@ const tools = [
     logoSrc: "/ lovable-uploads/Logos/Reporadar.png",
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
-    position: { x: 200, y: 140 },
+    position: { x: 280, y: 180 },
   },
 ];
 
@@ -127,14 +127,14 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
                 >
                   <motion.a
                     href={tool.href}
-                    className="block w-36 h-36 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 before:via-transparent after:to-cyan-400/15"
+                    className="block w-54 h-54 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 before:via-transparent after:to-cyan-400/15"
                     whileHover={{ boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}
                     onClick={onClose}
                   >
                     <img 
                       src={tool.logoSrc} 
                       alt={`${tool.name} logo`}
-                      className="w-20 h-20 object-contain relative z-10"
+                      className="w-30 h-30 object-contain relative z-10"
                       onError={(e) => {
                         console.error(`Failed to load logo: ${tool.logoSrc}`);
                         e.currentTarget.style.display = 'none';
@@ -171,12 +171,20 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
 
             {/* Center Logo */}
             <motion.div
-              className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center shadow-lg"
+              className="w-24 h-24 bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg rounded-full flex items-center justify-center relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 before:via-transparent after:to-cyan-400/15"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <span className="text-white font-bold text-lg">R</span>
+              <img 
+                src="/ lovable-uploads/Logos/Stackstudio.png" 
+                alt="StackStudio logo"
+                className="w-14 h-14 object-contain relative z-10"
+                onError={(e) => {
+                  console.error(`Failed to load StackStudio logo`);
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
             </motion.div>
           </div>
         </motion.div>
