@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Code, Zap, Bot, Radar, Rocket } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -12,44 +12,36 @@ interface EcosystemBubbleMenuProps {
 
 const tools = [
   {
-    name: "StackStudio",
-    description: "Full-stack development platform",
-    icon: Code,
-    href: "/stackstudio",
+    name: "StackFast",
+    description: "AI-powered launchpad",
+    logoSrc: "/ lovable-uploads/Logos/Stackfast.png",
+    href: "/stackfast",
     color: "from-blue-500 to-purple-600",
-    position: { x: 0, y: 0 },
+    position: { x: -120, y: -80 },
   },
   {
-    name: "Unbuilt",
-    description: "Rapid prototyping tool",
-    icon: Zap,
+    name: "Unbuilt feat. the EurekaShelf",
+    description: "Innovation platform",
+    logoSrc: "/ lovable-uploads/Logos/UNBUILT.png",
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
-    position: { x: 150, y: -80 },
+    position: { x: 120, y: -80 },
   },
   {
     name: "VentureClone AI",
-    description: "Business idea generator",
-    icon: Bot,
+    description: "Business cloning platform",
+    logoSrc: "/ lovable-uploads/Logos/VC2.png",
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
-    position: { x: -150, y: -80 },
+    position: { x: -120, y: 80 },
   },
   {
     name: "RepoRadar",
-    description: "Code repository analysis",
-    icon: Radar,
+    description: "GitHub intelligence",
+    logoSrc: "/ lovable-uploads/Logos/Reporadar.png",
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
-    position: { x: 120, y: 100 },
-  },
-  {
-    name: "StackFast",
-    description: "Coming soon...",
-    icon: Rocket,
-    href: "/stackfast",
-    color: "from-gray-500 to-gray-600",
-    position: { x: -120, y: 100 },
+    position: { x: 120, y: 80 },
   },
 ];
 
@@ -94,8 +86,6 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
 
             {/* Tool Bubbles */}
             {tools.map((tool, index) => {
-              const IconComponent = tool.icon;
-              
               return (
                 <motion.div
                   key={tool.name}
@@ -137,16 +127,15 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
                 >
                   <motion.a
                     href={tool.href}
-                    className={cn(
-                      "block w-24 h-24 rounded-full bg-gradient-to-br shadow-lg hover:shadow-xl",
-                      "flex items-center justify-center text-white cursor-pointer",
-                      "transition-all duration-300",
-                      tool.color
-                    )}
+                    className="block w-24 h-24 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 before:via-transparent after:to-cyan-400/15"
                     whileHover={{ boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}
                     onClick={onClose}
                   >
-                    <IconComponent size={32} />
+                    <img 
+                      src={tool.logoSrc} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain relative z-10"
+                    />
                   </motion.a>
                   
                   {/* Tool Info */}
