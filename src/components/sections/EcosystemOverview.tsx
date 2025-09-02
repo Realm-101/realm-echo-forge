@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Code, Zap, Bot, Radar, Rocket, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BlurInText } from "@/components/interactive/BlurInText";
 
 const tools = [
   {
     name: "StackFast",
     description: "AI-powered launchpad with compatibility insights to eliminate complexity in project setup. Currently in Alpha phase.",
-    icon: Rocket,
+    logoSrc: "/lovable-uploads/Logos/Stackfast.png",
     features: ["Alpha Phase", "AI Compatibility", "Project Setup"],
     href: "/stackfast",
     color: "from-blue-500 to-purple-600",
@@ -19,7 +19,7 @@ const tools = [
   {
     name: "Unbuilt feat. the EurekaShelf",
     description: "End-to-end innovation platform to discover market gaps, validate ideas, and generate investor-ready pitch decks. Alpha phase.",
-    icon: Zap,
+    logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
     features: ["Alpha Phase", "Market Research", "Pitch Decks"],
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
@@ -28,7 +28,7 @@ const tools = [
   {
     name: "RepoRadar",
     description: "AI-powered intelligence platform to discover, compare, and evaluate GitHub repositories on metrics like originality and monetization potential. Alpha phase.",
-    icon: Radar,
+    logoSrc: "/lovable-uploads/Logos/Reporadar.png",
     features: ["Alpha Phase", "GitHub Analysis", "AI Intelligence"],
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
@@ -37,7 +37,7 @@ const tools = [
   {
     name: "VentureClone AI",
     description: "Platform that analyzes existing online businesses for 'clone potential,' guiding users from discovery to a launch-ready blueprint. Alpha phase.",
-    icon: Bot,
+    logoSrc: "/lovable-uploads/Logos/VC2.png",
     features: ["Alpha Phase", "Business Analysis", "Clone Potential"],
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
@@ -76,9 +76,7 @@ export const EcosystemOverview = () => {
 
         {/* Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {tools.map((tool, index) => {
-            const IconComponent = tool.icon;
-            
+        {tools.map((tool, index) => {            
             return (
               <motion.div
                 key={tool.name}
@@ -91,8 +89,12 @@ export const EcosystemOverview = () => {
                 <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
                   <CardHeader>
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center`}>
-                        <IconComponent className="w-6 h-6 text-white" />
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center p-2`}>
+                        <img 
+                          src={tool.logoSrc} 
+                          alt={`${tool.name} logo`}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                       <div>
                         <CardTitle className="text-xl font-heading text-primary">
