@@ -89,7 +89,7 @@ export const EcosystemOverview = () => {
                 <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
                   <CardHeader>
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center p-2`}>
+                      <div className={`w-18 h-18 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center p-2`}>
                         <img 
                           src={tool.logoSrc} 
                           alt={`${tool.name} logo`}
