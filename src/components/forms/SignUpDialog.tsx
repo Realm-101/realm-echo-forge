@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Loader2, CheckCircle, Mail } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -69,16 +70,33 @@ export const SignUpDialog = ({
     setIsSubmitting(true);
     
     try {
-      // Simulate API call - In production, this would connect to Supabase
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log("Form submission:", values);
-      
-      setIsSuccess(true);
-      toast({
-        title: "Welcome to Realm 101!",
-        description: "We'll be in touch soon with your access details.",
-      });
+      // Insert lead into Supabase
+      const { error } = await supabase
+        .from('leads')
+        .insert({
+          first_name: values.firstName,
+          last_name: values.lastName,
+          email: values.email,
+          company: values.company || null,
+        });
+
+      if (error) {
+        // Handle duplicate email error
+        if (error.code === '23505') {
+          toast({
+            title: "Already signed up",
+            description: "This email is already on our waitlist. We'll be in touch soon!",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        setIsSuccess(true);
+        toast({
+          title: "Welcome to Realm 101!",
+          description: "We'll be in touch soon with your access details.",
+        });
+      }
       
       // Close dialog after success
       setTimeout(() => {
@@ -88,6 +106,7 @@ export const SignUpDialog = ({
       }, 2000);
       
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         title: "Something went wrong",
         description: "Please try again later.",
