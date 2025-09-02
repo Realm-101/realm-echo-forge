@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { EcosystemOverview } from "@/components/sections/EcosystemOverview";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { FAQ } from "@/components/sections/FAQ";
+import { CookieConsent } from "@/components/ui/cookie-consent";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <FAQ />
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 };

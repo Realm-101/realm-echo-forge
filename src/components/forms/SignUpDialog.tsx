@@ -91,6 +91,21 @@ export const SignUpDialog = ({
           throw error;
         }
       } else {
+        // Send confirmation email
+        try {
+          await supabase.functions.invoke('send-confirmation-email', {
+            body: {
+              firstName: values.firstName,
+              lastName: values.lastName,
+              email: values.email,
+              company: values.company,
+            },
+          });
+        } catch (emailError) {
+          console.error('Error sending confirmation email:', emailError);
+          // Don't fail the signup if email fails
+        }
+
         setIsSuccess(true);
         toast({
           title: "Welcome to Realm 101!",
