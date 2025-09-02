@@ -5,9 +5,18 @@ import { BlurInText } from "@/components/interactive/BlurInText";
 import { MagneticButton } from "@/components/interactive/MagneticButton";
 import { SignUpDialog } from "@/components/forms/SignUpDialog";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Play } from "lucide-react";
 
 export const Hero = () => {
+  const { toast } = useToast();
+
+  const handleWatchDemo = () => {
+    toast({
+      title: "Coming Soon!",
+      description: "The demo video will be available shortly.",
+    });
+  };
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/5 pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,6 +62,7 @@ export const Hero = () => {
               variant="outline"
               size="xl"
               className="group"
+              onClick={handleWatchDemo}
             >
               <Play className="mr-2 h-5 w-5" />
               Watch Demo
