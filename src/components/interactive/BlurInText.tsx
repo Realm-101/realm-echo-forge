@@ -57,7 +57,7 @@ export const BlurInText = ({ text, className, delay = 0 }: BlurInTextProps) => {
             <>
               <video 
                 src="/lovable-uploads/kling_20250901_Image_to_Video_The_vibran_617_3.mp4"
-                className="inline w-16 h-10 object-cover rounded"
+                className="inline h-[1.2em] w-auto object-cover rounded align-baseline"
                 autoPlay
                 loop
                 muted
@@ -67,7 +67,7 @@ export const BlurInText = ({ text, className, delay = 0 }: BlurInTextProps) => {
           ) : word === "StackStudio" ? (
             <video 
               src="/lovable-uploads/kling_20250901_Image_to_Video_The_vibran_617_3.mp4"
-              className="inline w-16 h-10 object-cover rounded"
+              className="inline h-[1.2em] w-auto object-cover rounded align-baseline"
               autoPlay
               loop
               muted
