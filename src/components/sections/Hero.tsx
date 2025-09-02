@@ -38,7 +38,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <SignUpDialog>
+            <a href="https://realm101.com/stackstudio" target="_blank" rel="noopener noreferrer">
               <MagneticButton
                 variant="hero"
                 size="xl"
@@ -47,7 +47,7 @@ export const Hero = () => {
                 Start Building
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </MagneticButton>
-            </SignUpDialog>
+            </a>
             
             <Button
               variant="outline"
