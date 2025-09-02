@@ -157,10 +157,12 @@ export const EcosystemOverview = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Button variant="hero" size="lg" className="group">
-            Explore the StackStudio Ecosystem
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <a href="https://realm101.com/stackstudio" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="lg" className="group">
+              Explore the StackStudio Ecosystem
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
