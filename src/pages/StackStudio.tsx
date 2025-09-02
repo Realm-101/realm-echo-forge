@@ -76,6 +76,7 @@ const StackStudio = () => {
               <BlurInText
                 text="StackStudio"
                 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-primary mb-6"
+                showVideo={true}
               />
               
               <motion.div

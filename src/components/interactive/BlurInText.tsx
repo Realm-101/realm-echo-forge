@@ -7,9 +7,10 @@ interface BlurInTextProps {
   text: string;
   className?: string;
   delay?: number;
+  showVideo?: boolean;
 }
 
-export const BlurInText = ({ text, className, delay = 0 }: BlurInTextProps) => {
+export const BlurInText = ({ text, className, delay = 0, showVideo = false }: BlurInTextProps) => {
   const words = text.split(" ");
 
   const container = {
@@ -53,7 +54,7 @@ export const BlurInText = ({ text, className, delay = 0 }: BlurInTextProps) => {
           variants={child}
           className="inline-block mr-2"
         >
-          {word === "StackStudio," ? (
+          {showVideo && word === "StackStudio," ? (
             <>
               <video 
                 src="/lovable-uploads/kling_20250901_Image_to_Video_The_vibran_617_3.mp4"
@@ -64,7 +65,7 @@ export const BlurInText = ({ text, className, delay = 0 }: BlurInTextProps) => {
               />
               ,
             </>
-          ) : word === "StackStudio" ? (
+          ) : showVideo && word === "StackStudio" ? (
             <video 
               src="/lovable-uploads/kling_20250901_Image_to_Video_The_vibran_617_3.mp4"
               className="inline h-[440px] w-auto object-cover rounded align-baseline"
