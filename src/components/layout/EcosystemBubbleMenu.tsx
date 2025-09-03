@@ -182,8 +182,8 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
             <motion.div
               className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg flex items-center justify-center transition-all duration-300 relative overflow-hidden p-6 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute before:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 after:via-transparent after:to-cyan-400/15"
               style={{
-                left: `calc(25% + 100px)`,
-                top: `calc(50% + 100px)`,
+                left: `calc(50% + 0px)`,
+                top: `calc(50% + -60px)`,
                 transform: "translate(-50%, -50%)",
               }}
               initial={{ opacity: 0, scale: 0 }}
