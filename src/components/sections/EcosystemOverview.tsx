@@ -138,7 +138,7 @@ export const EcosystemOverview = () => {
                       asChild
                     >
                       <a href={tool.href}>
-                        Explore Alpha
+                        Explore
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </a>
                     </Button>
