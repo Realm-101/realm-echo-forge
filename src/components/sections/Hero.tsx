@@ -78,7 +78,7 @@ export const Hero = () => {
           >
             <div className="text-center">
               <div className="text-3xl font-bold text-accent font-heading">4</div>
-              <div className="text-sm text-muted-foreground font-body">Alpha Tools in StackStudio</div>
+              <div className="text-sm text-muted-foreground font-body">Tools in StackStudio</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-accent font-heading">∞</div>
