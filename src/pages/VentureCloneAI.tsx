@@ -82,7 +82,7 @@ const VentureCloneAI = () => {
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
                 <MagneticButton variant="hero" size="xl" className="group">
-                  Generate Ideas
+                  see the demo
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
                 
