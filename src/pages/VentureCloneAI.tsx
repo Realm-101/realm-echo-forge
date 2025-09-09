@@ -81,7 +81,12 @@ const VentureCloneAI = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-                <MagneticButton variant="hero" size="xl" className="group">
+                <MagneticButton 
+                  variant="hero" 
+                  size="xl" 
+                  className="group"
+                  onClick={() => window.open('https://VClone.online', '_blank')}
+                >
                   see the demo
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
