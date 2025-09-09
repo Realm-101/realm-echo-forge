@@ -72,8 +72,7 @@ const VentureCloneAI = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                Discover your next billion-dollar idea with AI-powered market analysis, 
-                business plan generation, and opportunity scoring.
+                VentureClone AI is a systematic business cloning platform that analyzes existing online businesses for clonability potential. The application helps entrepreneurs identify promising businesses to replicate by providing AI-powered analysis across multiple dimensions including technical complexity, market opportunity, competitive landscape, resource requirements, and time to market. Users can input URLs for analysis, receive detailed scoring and insights, and follow a structured 6-stage workflow from discovery through AI automation implementation.
               </motion.p>
 
               <motion.div
