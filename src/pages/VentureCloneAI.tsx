@@ -60,7 +60,7 @@ const VentureCloneAI = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <BlurInText
-                  text="AI-Powered Business Idea Generator"
+                  text="AI-Powered Business Duplicator"
                   className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 font-body leading-relaxed"
                   delay={0.3}
                 />
