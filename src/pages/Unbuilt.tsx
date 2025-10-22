@@ -49,9 +49,14 @@ const Unbuilt = () => {
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-green-500/5 pt-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <BlurInText
-                text="Unbuilt"
-                className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-primary mb-6"
+              <motion.img
+                src="/lovable-uploads/unbuilt.gif"
+                alt="Unbuilt"
+                className="mx-auto mb-6 max-w-full h-auto"
+                style={{ maxHeight: "200px" }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               />
               
               <motion.div
