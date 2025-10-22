@@ -285,7 +285,7 @@ const StackStudio = () => {
                             <CardTitle className="text-xl font-heading text-primary">
                               {tool.title}
                             </CardTitle>
-                            <span className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full font-body">
+                            <span className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full font-body whitespace-nowrap inline-block mt-1">
                               {tool.title === "StackFast" ? "Alpha Phase" : "Beta Phase"}
                             </span>
                           </div>
