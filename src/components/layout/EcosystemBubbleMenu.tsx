@@ -189,12 +189,19 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
+              whileHover={{ scale: 1.1 }}
             >
-              <img 
-                src="/lovable-uploads/Logos/Stackstudio.png" 
-                alt="StackStudio logo"
-                className="w-full h-full object-contain relative z-10"
-              />
+              <motion.a
+                href="/stackstudio"
+                className="w-full h-full flex items-center justify-center cursor-pointer"
+                onClick={onClose}
+              >
+                <img 
+                  src="/lovable-uploads/Logos/Stackstudio.png" 
+                  alt="StackStudio logo"
+                  className="w-full h-full object-contain relative z-10"
+                />
+              </motion.a>
             </motion.div>
           </div>
         </motion.div>
