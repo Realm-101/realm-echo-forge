@@ -32,28 +32,32 @@ const featuredTools = [
     title: "Unbuilt",
     subtitle: "AI-Powered Opportunity Finder",
     description: "Find untapped market opportunities and innovation gaps using AI analysis. Unbuilt is like a tireless research team in your corner: it scans trends, consumer needs, and industry data to highlight 'the next big thing' that hasn't been built yet. Why guess what to build? Unbuilt shines a light on ideas grounded in real demand.",
-    icon: Lightbulb,
+    logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
+    features: ["Alpha Phase", "Market Research", "AI Analysis"],
     link: "/unbuilt",
   },
   {
     title: "StackFast",
     subtitle: "AI Tech Stack Builder",
     description: "Design your tech stack in minutes instead of weeks. StackFast helps you discover the best AI development tools, analyze their compatibility, and instantly generate project blueprints. It takes the pain out of researching which frameworks, APIs, or databases work well together by providing data-driven recommendations and harmony scores.",
-    icon: Zap,
+    logoSrc: "/lovable-uploads/Logos/Stackfast.png",
+    features: ["Alpha Phase", "AI Compatibility", "Project Blueprints"],
     link: "/stackfast",
   },
   {
     title: "RepoRadar",
     subtitle: "Repository Intelligence, Simplified",
     description: "Evaluate open-source projects at a glance. Paste a GitHub link and get an AI-generated report on that repository's health and quality. RepoRadar pulls key metrics and uses AI to interpret what's behind the numbers. In seconds, you'll get a plain-English summary – no more digging through READMEs and commit histories.",
-    icon: Target,
+    logoSrc: "/lovable-uploads/Logos/Reporadar.png",
+    features: ["Alpha Phase", "GitHub Analysis", "AI Reports"],
     link: "/reporadar",
   },
   {
     title: "VentureClone AI",
     subtitle: "Business Cloning Simulator",
     description: "Ever wondered if you could recreate the success of another startup? VentureClone is an AI-driven platform that analyzes existing online businesses and shows you what it would take to 'clone' them. It breaks down tech stack, complexity, market, competition, and more, giving you a clonability score and roadmap for building a similar product.",
-    icon: Code,
+    logoSrc: "/lovable-uploads/Logos/VC2.png",
+    features: ["Alpha Phase", "Business Analysis", "Clone Potential"],
     link: "/ventureclone-ai",
   },
 ];
@@ -258,8 +262,6 @@ const StackStudio = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {featuredTools.map((tool, index) => {
-                const IconComponent = tool.icon;
-                
                 return (
                   <motion.div
                     key={tool.title}
@@ -267,27 +269,59 @@ const StackStudio = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0 group cursor-pointer"
-                          onClick={() => window.location.href = tool.link}>
+                    <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
                       <CardHeader>
-                        <div className="flex items-start justify-between">
-                          <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
-                            <IconComponent className="w-6 h-6 text-white" />
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-18 h-18 rounded-xl bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg relative overflow-hidden flex items-center justify-center p-2 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 after:via-transparent after:to-cyan-400/15">
+                            <img 
+                              src={tool.logoSrc} 
+                              alt={`${tool.title} logo`}
+                              className="w-full h-full object-contain relative z-10"
+                            />
                           </div>
-                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+                          <div>
+                            <CardTitle className="text-xl font-heading text-primary">
+                              {tool.title}
+                            </CardTitle>
+                            <span className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full font-body">
+                              Alpha Phase
+                            </span>
+                          </div>
                         </div>
-                        <CardTitle className="text-xl font-heading text-primary">
-                          {tool.title}
-                        </CardTitle>
-                        <CardDescription className="text-sm font-semibold text-accent">
+                        <CardDescription className="text-sm font-semibold text-accent mb-2">
                           {tool.subtitle}
                         </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground font-body leading-relaxed">
+                        <CardDescription className="text-muted-foreground font-body leading-relaxed">
                           {tool.description}
-                        </p>
+                        </CardDescription>
+                      </CardHeader>
+                      
+                      <CardContent className="pt-0">
+                        {/* Features */}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {tool.features.map((feature) => (
+                            <span
+                              key={feature}
+                              className="text-xs bg-secondary text-secondary-foreground px-3 py-1 rounded-full font-body"
+                            >
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
+                        
+                        {/* CTA Button */}
+                        <Button
+                          variant="default"
+                          className="w-full group"
+                          asChild
+                        >
+                          <a href={tool.link}>
+                            Explore
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </a>
+                        </Button>
                       </CardContent>
                     </Card>
                   </motion.div>
