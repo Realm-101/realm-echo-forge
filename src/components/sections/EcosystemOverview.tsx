@@ -18,27 +18,27 @@ const tools = [
   },
   {
     name: "Unbuilt feat. the EurekaShelf",
-    description: "End-to-end innovation platform to discover market gaps, validate ideas, and generate investor-ready pitch decks. Alpha phase.",
+    description: "End-to-end innovation platform to discover market gaps, validate ideas, and generate investor-ready pitch decks. Beta phase.",
     logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
-    features: ["Alpha Phase", "Market Research", "Pitch Decks"],
+    features: ["Beta Phase", "Market Research", "Pitch Decks"],
     href: "/unbuilt",
     color: "from-green-500 to-teal-600",
     isAlpha: true,
   },
   {
     name: "RepoRadar",
-    description: "AI-powered intelligence platform to discover, compare, and evaluate GitHub repositories on metrics like originality and monetization potential. Alpha phase.",
+    description: "AI-powered intelligence platform to discover, compare, and evaluate GitHub repositories on metrics like originality and monetization potential. Beta phase.",
     logoSrc: "/lovable-uploads/Logos/Reporadar.png",
-    features: ["Alpha Phase", "GitHub Analysis", "AI Intelligence"],
+    features: ["Beta Phase", "GitHub Analysis", "AI Intelligence"],
     href: "/reporadar",
     color: "from-orange-500 to-red-600",
     isAlpha: true,
   },
   {
     name: "VentureClone AI",
-    description: "Platform that analyzes existing online businesses for 'clone potential,' guiding users from discovery to a launch-ready blueprint. Alpha phase.",
+    description: "Platform that analyzes existing online businesses for 'clone potential,' guiding users from discovery to a launch-ready blueprint. Beta phase.",
     logoSrc: "/lovable-uploads/Logos/VC2.png",
-    features: ["Alpha Phase", "Business Analysis", "Clone Potential"],
+    features: ["Beta Phase", "Business Analysis", "Clone Potential"],
     href: "/ventureclone-ai",
     color: "from-purple-500 to-pink-600",
     isAlpha: true,
@@ -108,7 +108,7 @@ export const EcosystemOverview = () => {
                         </CardTitle>
                         {tool.isAlpha && (
                           <span className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full font-body">
-                            Alpha Phase
+                            {tool.name === "StackFast" ? "Alpha Phase" : "Beta Phase"}
                           </span>
                         )}
                       </div>

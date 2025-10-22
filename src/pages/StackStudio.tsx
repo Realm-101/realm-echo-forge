@@ -33,7 +33,7 @@ const featuredTools = [
     subtitle: "AI-Powered Opportunity Finder",
     description: "Find untapped market opportunities and innovation gaps using AI analysis. Unbuilt is like a tireless research team in your corner: it scans trends, consumer needs, and industry data to highlight 'the next big thing' that hasn't been built yet. Why guess what to build? Unbuilt shines a light on ideas grounded in real demand.",
     logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
-    features: ["Alpha Phase", "Market Research", "AI Analysis"],
+    features: ["Beta Phase", "Market Research", "AI Analysis"],
     link: "/unbuilt",
   },
   {
@@ -49,7 +49,7 @@ const featuredTools = [
     subtitle: "Repository Intelligence, Simplified",
     description: "Evaluate open-source projects at a glance. Paste a GitHub link and get an AI-generated report on that repository's health and quality. RepoRadar pulls key metrics and uses AI to interpret what's behind the numbers. In seconds, you'll get a plain-English summary – no more digging through READMEs and commit histories.",
     logoSrc: "/lovable-uploads/Logos/Reporadar.png",
-    features: ["Alpha Phase", "GitHub Analysis", "AI Reports"],
+    features: ["Beta Phase", "GitHub Analysis", "AI Reports"],
     link: "/reporadar",
   },
   {
@@ -57,7 +57,7 @@ const featuredTools = [
     subtitle: "Business Cloning Simulator",
     description: "Ever wondered if you could recreate the success of another startup? VentureClone is an AI-driven platform that analyzes existing online businesses and shows you what it would take to 'clone' them. It breaks down tech stack, complexity, market, competition, and more, giving you a clonability score and roadmap for building a similar product.",
     logoSrc: "/lovable-uploads/Logos/VC2.png",
-    features: ["Alpha Phase", "Business Analysis", "Clone Potential"],
+    features: ["Beta Phase", "Business Analysis", "Clone Potential"],
     link: "/ventureclone-ai",
   },
 ];
@@ -286,7 +286,7 @@ const StackStudio = () => {
                               {tool.title}
                             </CardTitle>
                             <span className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full font-body">
-                              Alpha Phase
+                              {tool.title === "StackFast" ? "Alpha Phase" : "Beta Phase"}
                             </span>
                           </div>
                         </div>
