@@ -30,9 +30,10 @@ const tools = [
     description: "AI-powered intelligence platform to discover, compare, and evaluate GitHub repositories on metrics like originality and monetization potential. Beta phase.",
     logoSrc: "/lovable-uploads/Logos/Reporadar.png",
     features: ["Beta Phase", "GitHub Analysis", "AI Intelligence"],
-    href: "/reporadar",
+    href: "https://reporadar.online/",
     color: "from-orange-500 to-red-600",
     isAlpha: true,
+    isExternal: true,
   },
   {
     name: "VentureClone AI",
@@ -137,7 +138,10 @@ export const EcosystemOverview = () => {
                       className="w-full group"
                       asChild
                     >
-                      <a href={tool.href}>
+                      <a 
+                        href={tool.href}
+                        {...(tool.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
                         Explore
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </a>
