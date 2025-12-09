@@ -230,7 +230,12 @@ const RepoRadar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
-                <MagneticButton variant="hero" size="xl" className="group">
+              <MagneticButton 
+                variant="hero" 
+                size="xl" 
+                className="group"
+                onClick={() => window.open('https://reporadar.online/', '_blank')}
+              >
                   Start Free Analysis
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
@@ -592,6 +597,7 @@ const RepoRadar = () => {
                   variant="outline"
                   size="xl"
                   className="bg-white text-accent hover:bg-white/90 border-0 shadow-premium"
+                  onClick={() => window.open('https://reporadar.online/', '_blank')}
                 >
                   Start Free Analysis
                   <ArrowRight className="ml-2 h-5 w-5" />
