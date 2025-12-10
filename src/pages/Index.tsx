@@ -1,11 +1,8 @@
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/sections/Hero";
-import { EcosystemOverview } from "@/components/sections/EcosystemOverview";
-import { About } from "@/components/sections/About";
-import { SocialProof } from "@/components/sections/SocialProof";
-import { Contact } from "@/components/sections/Contact";
-import { FAQ } from "@/components/sections/FAQ";
+import { SimpleFooter } from "@/components/layout/SimpleFooter";
+import { GatewayHero } from "@/components/sections/GatewayHero";
+import { StackStudioSection } from "@/components/sections/StackStudioSection";
+import { WitnessSection } from "@/components/sections/WitnessSection";
 import { CookieConsent } from "@/components/ui/cookie-consent";
 
 const Index = () => {
@@ -13,14 +10,11 @@ const Index = () => {
     <div className="min-h-screen font-body">
       <Header />
       <main>
-        <Hero />
-        <EcosystemOverview />
-        <About />
-        <SocialProof />
-        <Contact />
-        <FAQ />
+        <GatewayHero />
+        <StackStudioSection />
+        <WitnessSection />
       </main>
-      <Footer />
+      <SimpleFooter />
       <CookieConsent />
     </div>
   );

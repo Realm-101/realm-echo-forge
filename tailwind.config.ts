@@ -61,6 +61,18 @@ export default {
 				realm: {
 					primary: 'hsl(var(--realm-primary))',
 					accent: 'hsl(var(--realm-accent))',
+				},
+				factory: {
+					primary: 'hsl(var(--factory-primary))',
+					secondary: 'hsl(var(--factory-secondary))',
+					accent: 'hsl(var(--factory-accent))',
+					bg: 'hsl(var(--factory-bg))',
+				},
+				witness: {
+					primary: 'hsl(var(--witness-primary))',
+					secondary: 'hsl(var(--witness-secondary))',
+					accent: 'hsl(var(--witness-accent))',
+					bg: 'hsl(var(--witness-bg))',
 				}
 			},
 			backgroundImage: {
