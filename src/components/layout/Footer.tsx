@@ -10,26 +10,16 @@ const footerLinks = {
     { name: "StackStudio", href: "/stackstudio" },
     { name: "Unbuilt", href: "/unbuilt" },
     { name: "VentureClone AI", href: "/ventureclone-ai" },
-    { name: "RepoRadar", href: "/reporadar" },
+    { name: "RepoRadar", href: "https://reporadar.online/", external: true },
     { name: "StackFast", href: "/stackfast" },
   ],
   company: [
-    { name: "About", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" },
-  ],
-  resources: [
-    { name: "Documentation", href: "/docs" },
-    { name: "API Reference", href: "/api" },
-    { name: "Community", href: "/community" },
-    { name: "Support", href: "/support" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "mailto:dev@realm101.nl", external: true },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" },
-    { name: "Security", href: "/security" },
   ],
 };
 
@@ -37,7 +27,7 @@ const socialLinks = [
   { name: "GitHub", icon: Github, href: "https://github.com/realm101" },
   { name: "Twitter", icon: Twitter, href: "https://twitter.com/realm101" },
   { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/realm101" },
-  { name: "Email", icon: Mail, href: "mailto:hello@realm101.dev" },
+  { name: "Email", icon: Mail, href: "mailto:dev@realm101.nl" },
 ];
 
 export const Footer = () => {
@@ -46,7 +36,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <motion.div
@@ -103,6 +93,7 @@ export const Footer = () => {
                       <a
                         href={link.href}
                         className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
+                        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         {link.name}
                       </a>
@@ -127,30 +118,7 @@ export const Footer = () => {
                       <a
                         href={link.href}
                         className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
-
-            {/* Resources Links */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="font-heading font-semibold mb-4">Resources</h3>
-                <ul className="space-y-3">
-                  {footerLinks.resources.map((link) => (
-                    <li key={link.name}>
-                      <a
-                        href={link.href}
-                        className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
+                        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         {link.name}
                       </a>
@@ -165,7 +133,7 @@ export const Footer = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
                 <h3 className="font-heading font-semibold mb-4">Legal</h3>
@@ -198,7 +166,7 @@ export const Footer = () => {
             viewport={{ once: true }}
           >
             <p className="text-primary-foreground/60 text-sm font-body">
-              © 2024 Realm 101. All rights reserved.
+              © {new Date().getFullYear()} Realm 101. All rights reserved.
             </p>
             <p className="text-primary-foreground/60 text-sm font-body">
               Built with ❤️ for developers, by developers

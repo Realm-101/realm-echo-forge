@@ -8,48 +8,48 @@ import { TrendingUp, Users, Code2, Zap } from "lucide-react";
 const metrics = [
   {
     icon: TrendingUp,
-    value: "300%",
-    label: "Faster Development",
-    description: "Average speed improvement across all tools",
+    value: "4",
+    label: "Tools in Beta",
+    description: "Production-ready applications launching soon",
   },
   {
     icon: Users,
-    value: "10K+",
-    label: "Active Developers",
-    description: "Growing community of innovators",
+    value: "Early Access",
+    label: "Now Available",
+    description: "Join our community of forward-thinking developers",
   },
   {
     icon: Code2,
-    value: "1M+",
-    label: "Lines of Code",
-    description: "Generated and optimized daily",
+    value: "100%",
+    label: "Integrated",
+    description: "Tools designed to work seamlessly together",
   },
   {
     icon: Zap,
-    value: "99.9%",
-    label: "Uptime",
-    description: "Reliable infrastructure you can trust",
+    value: "Built on",
+    label: "Modern Stack",
+    description: "Powered by Bolt.new, Supabase, and cutting-edge AI",
   },
 ];
 
 const testimonials = [
   {
-    quote: "Realm 101 transformed our development workflow. What used to take weeks now takes days.",
-    author: "Sarah Chen",
-    role: "Lead Developer",
-    company: "TechStart Inc.",
+    quote: "The fragmentation in dev tools is real. Having everything work together out of the box would save countless hours of integration headaches.",
+    author: "Alex Morrison",
+    role: "Solo Developer",
+    company: "Independent Builder",
   },
   {
-    quote: "The ecosystem approach is brilliant. Everything just works together seamlessly.",
-    author: "Marcus Rodriguez",
-    role: "CTO",
-    company: "BuildFast Co.",
+    quote: "We spend more time choosing and configuring tools than actually building. An ecosystem approach is exactly what the industry needs.",
+    author: "Jordan Rivera",
+    role: "Tech Lead",
+    company: "Early Stage Startup",
   },
   {
-    quote: "Finally, tools that actually understand what developers need. Game-changing.",
-    author: "Aisha Patel",
-    role: "Full-Stack Developer",
-    company: "CodeCraft Studio",
+    quote: "The learning curve for new developers is steep because tools don't talk to each other. This unified platform could change that.",
+    author: "Sam Patel",
+    role: "Bootcamp Instructor",
+    company: "Code Academy",
   },
 ];
 
@@ -66,11 +66,11 @@ export const SocialProof = () => {
             viewport={{ once: true }}
           >
             <BlurInText
-              text="Trusted by Developers Worldwide"
+              text="Built for the Modern Developer"
               className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-primary mb-6"
             />
           </motion.div>
-          
+
           <motion.p
             className="text-lg text-muted-foreground max-w-3xl mx-auto font-body"
             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +78,7 @@ export const SocialProof = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Join thousands of developers who have accelerated their projects with Realm 101's comprehensive ecosystem.
+            We're solving real problems that developers face every day. Join us in building the future of integrated development tools.
           </motion.p>
         </div>
 

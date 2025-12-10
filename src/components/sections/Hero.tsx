@@ -5,21 +5,12 @@ import { BlurInText } from "@/components/interactive/BlurInText";
 import { MagneticButton } from "@/components/interactive/MagneticButton";
 import { SignUpDialog } from "@/components/forms/SignUpDialog";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export const Hero = () => {
-  const { toast } = useToast();
-
-  const handleWatchDemo = () => {
-    toast({
-      title: "Coming Soon!",
-      description: "The demo video will be available shortly.",
-    });
-  };
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/5 pt-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/5 pt-16 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Hero Headline */}
           <BlurInText
@@ -28,15 +19,26 @@ export const Hero = () => {
           />
           
           {/* Hero Subheading */}
-          <motion.div
+          <motion.p
+            className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 font-body leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <BlurInText
-              text="Realm 101 is a software and web development company. Our flagship project, StackStudio, is an inclusive development ecosystem that makes software development an accessible, empowering journey for everyone, from beginners to seasoned developers."
-              className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 font-body leading-relaxed"
-              delay={0.3}
+            An inclusive development ecosystem that makes software development accessible and empowering for everyone, from beginners to seasoned developers.
+          </motion.p>
+
+          {/* Hero Visual */}
+          <motion.div
+            className="mb-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <img
+              src="/lovable-uploads/stack-universe3_(large).png"
+              alt="StackStudio Ecosystem Visualization"
+              className="w-full h-auto rounded-2xl shadow-glow"
             />
           </motion.div>
 
@@ -57,16 +59,17 @@ export const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </MagneticButton>
             </a>
-            
-            <Button
-              variant="outline"
-              size="xl"
-              className="group"
-              onClick={handleWatchDemo}
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+
+            <SignUpDialog>
+              <Button
+                variant="outline"
+                size="xl"
+                className="group"
+              >
+                <Sparkles className="mr-2 h-5 w-5" />
+                Get Early Access
+              </Button>
+            </SignUpDialog>
           </motion.div>
 
           {/* Hero Stats */}
@@ -78,15 +81,15 @@ export const Hero = () => {
           >
             <div className="text-center">
               <div className="text-3xl font-bold text-accent font-heading">4</div>
-              <div className="text-sm text-muted-foreground font-body">Tools in StackStudio</div>
+              <div className="text-sm text-muted-foreground font-body">Integrated Tools</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent font-heading">∞</div>
-              <div className="text-sm text-muted-foreground font-body">Possibilities</div>
+              <div className="text-3xl font-bold text-accent font-heading">Real-time</div>
+              <div className="text-sm text-muted-foreground font-body">Sync & Collaboration</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent font-heading">100%</div>
-              <div className="text-sm text-muted-foreground font-body">Developer Focused</div>
+              <div className="text-3xl font-bold text-accent font-heading">One</div>
+              <div className="text-sm text-muted-foreground font-body">Unified Platform</div>
             </div>
           </motion.div>
         </div>

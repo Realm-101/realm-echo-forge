@@ -142,17 +142,10 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
                   onClick={onClose}
                   {...(tool.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
-                    <img 
-                      src={tool.logoSrc} 
+                    <img
+                      src={tool.logoSrc}
                       alt={`${tool.name} logo`}
                       className="w-20 h-20 object-contain relative z-10"
-                      onError={(e) => {
-                        console.error(`Failed to load logo: ${tool.logoSrc}`);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                      onLoad={() => {
-                        console.log(`Successfully loaded logo: ${tool.logoSrc}`);
-                      }}
                     />
                   </motion.a>
                   

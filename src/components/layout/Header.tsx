@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { EcosystemBubbleMenu } from "./EcosystemBubbleMenu";
+import { SignUpDialog } from "@/components/forms/SignUpDialog";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 export const Header = () => {
@@ -29,16 +30,20 @@ export const Header = () => {
     ease: "easeOut"
   }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-32">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div className="flex items-center space-x-2" whileHover={{
-          scale: 1.05
-        }} transition={{
-          duration: 0.2
-        }}>
-            <img src="/realm101-logo.png" alt="Realm 101 Logo" className="w-80 h-80 object-contain" />
-            
-          </motion.div>
+          <motion.a
+            href="/"
+            className="flex items-center space-x-2"
+            whileHover={{
+              scale: 1.05
+            }}
+            transition={{
+              duration: 0.2
+            }}
+          >
+            <img src="/realm101-logo.png" alt="Realm 101 Logo" className="w-40 h-16 object-contain" />
+          </motion.a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
@@ -67,10 +72,12 @@ export const Header = () => {
             )}
             
             <ThemeToggle />
-            
-            <Button variant="fur" size="sm" className="font-body">
-              Start Building
-            </Button>
+
+            <SignUpDialog>
+              <Button variant="fur" size="sm" className="font-body">
+                Start Building
+              </Button>
+            </SignUpDialog>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -120,10 +127,12 @@ export const Header = () => {
                     </a>
                   )
                 )}
-                
-                <Button variant="fur" className="w-full font-body">
-                  Start Building
-                </Button>
+
+                <SignUpDialog>
+                  <Button variant="fur" className="w-full font-body">
+                    Start Building
+                  </Button>
+                </SignUpDialog>
               </div>
             </motion.nav>}
         </AnimatePresence>
