@@ -12,18 +12,6 @@
     --realm-background: 0 0% 98%;
     --realm-foreground: 0 0% 15%;
     
-    /* Factory Branch - Cool Tech Blues/Purples */
-    --factory-primary: 230 70% 55%;
-    --factory-secondary: 260 60% 50%;
-    --factory-accent: 200 80% 60%;
-    --factory-bg: 230 30% 8%;
-    
-    /* Witness Branch - Warm Golds/Editorial */
-    --witness-primary: 42 80% 55%;
-    --witness-secondary: 35 70% 45%;
-    --witness-accent: 48 90% 65%;
-    --witness-bg: 40 20% 95%;
-    
     /* Semantic Colors */
     --background: var(--realm-background);
     --foreground: var(--realm-foreground);
@@ -59,19 +47,23 @@
     --gradient-primary: linear-gradient(135deg, hsl(var(--realm-primary)), hsl(var(--realm-accent)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--realm-accent)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --gradient-factory: linear-gradient(135deg, hsl(var(--factory-primary)) 0%, hsl(var(--factory-secondary)) 100%);
-    --gradient-witness: linear-gradient(135deg, hsl(var(--witness-primary)) 0%, hsl(var(--witness-secondary)) 100%);
     
     /* Shadows */
     --shadow-premium: 0 20px 40px -10px hsl(var(--realm-primary) / 0.1);
     --shadow-glow: 0 0 30px hsl(var(--realm-accent) / 0.2);
     --shadow-magnetic: 0 10px 25px -5px hsl(var(--realm-accent) / 0.3);
-    --shadow-factory: 0 0 40px hsl(var(--factory-primary) / 0.3);
-    --shadow-witness: 0 0 40px hsl(var(--witness-primary) / 0.3);
+    --shadow-fur: 0 8px 32px -8px hsl(var(--realm-primary) / 0.15), 0 2px 8px -2px hsl(var(--realm-accent) / 0.1);
+
+    /* Fur Texture Effects */
+    --gradient-fur-base: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--realm-accent)) 50%, hsl(var(--realm-primary)) 100%);
+    --gradient-fur-layer1: radial-gradient(ellipse at 20% 30%, hsl(var(--realm-accent) / 0.3) 0%, transparent 50%);
+    --gradient-fur-layer2: radial-gradient(ellipse at 80% 70%, hsl(var(--realm-primary) / 0.2) 0%, transparent 50%);
+    --gradient-fur-noise: repeating-linear-gradient(45deg, transparent, transparent 2px, hsl(var(--realm-accent) / 0.05) 2px, hsl(var(--realm-accent) / 0.05) 4px);
 
     /* Animations */
     --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fur: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .dark {

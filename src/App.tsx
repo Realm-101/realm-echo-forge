@@ -13,7 +13,6 @@ const RepoRadar = lazy(() => import("./pages/RepoRadar"));
 const StackFast = lazy(() => import("./pages/StackFast"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
-const Witness = lazy(() => import("./pages/Witness"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -41,7 +40,6 @@ const App = () => (
             <Route path="/stackfast" element={<StackFast />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/witness" element={<Witness />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
