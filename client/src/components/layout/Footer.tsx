@@ -6,15 +6,21 @@ import { Separator } from "@/components/ui/separator";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
-  product: [
+  products: [
     { name: "StackStudio", href: "/stackstudio" },
+    { name: "C4-Studio", href: "/c4-studio" },
+    { name: "WebKnot", href: "/webknot" },
+    { name: "Aldebate", href: "/aldebate" },
+  ],
+  stackstudioTools: [
     { name: "Unbuilt", href: "/unbuilt" },
     { name: "VentureClone AI", href: "/ventureclone-ai" },
     { name: "RepoRadar", href: "https://reporadar.online/", external: true },
     { name: "StackFast", href: "/stackfast" },
   ],
   company: [
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
     { name: "Contact", href: "mailto:dev@realm101.nl", external: true },
   ],
   legal: [
@@ -36,7 +42,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <motion.div
@@ -78,7 +84,7 @@ export const Footer = () => {
               </motion.div>
             </div>
 
-            {/* Product Links */}
+            {/* Products Links */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -86,9 +92,33 @@ export const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="font-heading font-semibold mb-4">Product</h3>
+                <h3 className="font-heading font-semibold mb-4">Products</h3>
                 <ul className="space-y-3">
-                  {footerLinks.product.map((link) => (
+                  {footerLinks.products.map((link) => (
+                    <li key={link.name}>
+                      <a
+                        href={link.href}
+                        className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* StackStudio Tools Links */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="font-heading font-semibold mb-4">StackStudio Tools</h3>
+                <ul className="space-y-3">
+                  {footerLinks.stackstudioTools.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
@@ -169,7 +199,7 @@ export const Footer = () => {
               © {new Date().getFullYear()} Realm 101. All rights reserved.
             </p>
             <p className="text-primary-foreground/60 text-sm font-body">
-              Built with ❤️ for developers, by developers
+              Built with passion for developers, by developers
             </p>
           </motion.div>
         </div>

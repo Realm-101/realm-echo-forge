@@ -6,17 +6,29 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { EcosystemBubbleMenu } from "./EcosystemBubbleMenu";
 import { SignUpDialog } from "@/components/forms/SignUpDialog";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBubbleMenuOpen, setIsBubbleMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  
+  const products = [
+    { name: "StackStudio", href: "/stackstudio", description: "Development ecosystem" },
+    { name: "C4-Studio", href: "/c4-studio", description: "AI creative studio" },
+    { name: "The WebKnot", href: "/webknot", description: "Component curation" },
+    { name: "Aldebate", href: "/aldebate", description: "AI debate platform" },
+  ];
+  
   const navLinks = [{
     name: "Home",
     href: "/"
   }, {
-    name: "Ecosystem",
-    href: "#ecosystem"
+    name: "Products",
+    href: "#products",
+    hasDropdown: true
   }, {
     name: "About",
     href: "#about"
@@ -48,16 +60,60 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
             {navLinks.map(link => 
-              link.name === "Ecosystem" ? (
-                <motion.button
+              link.hasDropdown ? (
+                <div 
                   key={link.name}
-                  onClick={() => setIsBubbleMenuOpen(true)}
-                  className="text-foreground hover:text-accent transition-colors duration-200 font-body cursor-pointer bg-transparent border-none"
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
+                  className="relative"
+                  onMouseEnter={() => setIsProductsOpen(true)}
+                  onMouseLeave={() => setIsProductsOpen(false)}
                 >
-                  {link.name}
-                </motion.button>
+                  <motion.button
+                    className="flex items-center gap-1 text-foreground hover:text-accent transition-colors duration-200 font-body cursor-pointer bg-transparent border-none"
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {link.name}
+                    <ChevronDown className={cn("w-4 h-4 transition-transform", isProductsOpen && "rotate-180")} />
+                  </motion.button>
+                  
+                  <AnimatePresence>
+                    {isProductsOpen && (
+                      <motion.div
+                        className="absolute top-full left-0 mt-2 w-56 bg-background/95 backdrop-blur-lg border border-border rounded-lg shadow-premium overflow-hidden"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {products.map((product) => (
+                          <Link
+                            key={product.name}
+                            to={product.href}
+                            className="block px-4 py-3 hover:bg-muted/50 transition-colors"
+                            onClick={() => setIsProductsOpen(false)}
+                          >
+                            <div className="font-body font-medium text-foreground">{product.name}</div>
+                            <div className="text-sm text-muted-foreground">{product.description}</div>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : link.name === "Home" ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body"
+                >
+                  <motion.span
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
+                    className="inline-block"
+                  >
+                    {link.name}
+                  </motion.span>
+                </Link>
               ) : (
                 <motion.a
                   key={link.name}
@@ -103,33 +159,41 @@ export const Header = () => {
         }} transition={{
           duration: 0.3
         }}>
-              <div className="flex flex-col space-y-4">
-                {navLinks.map(link => 
-                  link.name === "Ecosystem" ? (
-                    <button
-                      key={link.name}
-                      onClick={() => {
-                        setIsBubbleMenuOpen(true);
-                        setIsMenuOpen(false);
-                      }}
-                      className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2 text-left bg-transparent border-none cursor-pointer"
-                    >
-                      {link.name}
-                    </button>
-                  ) : (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.name}
-                    </a>
-                  )
-                )}
+              <div className="flex flex-col space-y-2">
+                <Link
+                  to="/"
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                
+                <div className="py-2">
+                  <div className="text-muted-foreground text-sm mb-2 font-body">Products</div>
+                  <div className="pl-4 space-y-2">
+                    {products.map((product) => (
+                      <Link
+                        key={product.name}
+                        to={product.href}
+                        className="block text-foreground hover:text-accent transition-colors duration-200 font-body py-1"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                <a
+                  href="#about"
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </a>
 
                 <SignUpDialog>
-                  <Button variant="fur" className="w-full font-body">
+                  <Button variant="fur" className="w-full font-body mt-4">
                     Start Building
                   </Button>
                 </SignUpDialog>

@@ -12,37 +12,36 @@ interface EcosystemBubbleMenuProps {
 
 const tools = [
   {
-    name: "StackFast",
-    description: "AI-powered launchpad",
-    logoSrc: "/lovable-uploads/Logos/Stackfast.png",
-    href: "/stackfast",
-    color: "from-blue-500 to-purple-600",
-    position: { x: -200, y: -60 },
+    name: "StackStudio",
+    description: "Development ecosystem",
+    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    href: "/stackstudio",
+    color: "from-purple-500 to-blue-600",
+    position: { x: 0, y: -120 },
   },
   {
-    name: "Unbuilt feat. the EurekaShelf",
-    description: "Innovation platform",
-    logoSrc: "/lovable-uploads/Logos/UNBUILT.png",
-    href: "/unbuilt",
-    color: "from-green-500 to-teal-600",
-    position: { x: 200, y: -60 },
+    name: "C4-Studio",
+    description: "AI creative studio",
+    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    href: "/c4-studio",
+    color: "from-furry-forest to-furry-sage",
+    position: { x: -180, y: 40 },
   },
   {
-    name: "VentureClone AI",
-    description: "Business cloning platform",
-    logoSrc: "/lovable-uploads/Logos/VC2.png",
-    href: "/ventureclone-ai",
-    color: "from-purple-500 to-pink-600",
-    position: { x: -200, y: 140 },
+    name: "The WebKnot",
+    description: "Component curation",
+    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    href: "/webknot",
+    color: "from-furry-tan to-furry-brown",
+    position: { x: 180, y: 40 },
   },
   {
-    name: "RepoRadar",
-    description: "GitHub intelligence",
-    logoSrc: "/lovable-uploads/Logos/Reporadar.png",
-    href: "https://reporadar.online/",
-    color: "from-orange-500 to-red-600",
-    position: { x: 200, y: 140 },
-    isExternal: true,
+    name: "Aldebate",
+    description: "AI debate platform",
+    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    href: "/aldebate",
+    color: "from-furry-sage to-furry-forest",
+    position: { x: 0, y: 160 },
   },
 ];
 
@@ -173,30 +172,23 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
               );
             })}
 
-            {/* Center Logo - positioned inside background bubble */}
+            {/* Center Realm101 Logo */}
             <motion.div
-              className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg flex items-center justify-center transition-all duration-300 relative overflow-hidden p-6 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute before:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 after:via-transparent after:to-cyan-400/15"
+              className="absolute w-28 h-28 rounded-full bg-gradient-to-br from-furry-forest/30 via-furry-tan/30 to-furry-brown/30 backdrop-blur-sm border border-white/20 shadow-lg flex items-center justify-center"
               style={{
-                left: `calc(50% + 0px)`,
-                top: '-320px',
+                left: `50%`,
+                top: `50%`,
                 transform: "translate(-50%, -50%)",
               }}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              whileHover={{ scale: 1.1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
             >
-              <motion.a
-                href="/stackstudio"
-                className="w-full h-full flex items-center justify-center cursor-pointer"
-                onClick={onClose}
-              >
-                <img 
-                  src="/lovable-uploads/Logos/Stackstudio.png" 
-                  alt="StackStudio logo"
-                  className="w-full h-full object-contain relative z-10"
-                />
-              </motion.a>
+              <img 
+                src="/realm101-logo.png" 
+                alt="Realm101"
+                className="w-20 h-20 object-contain"
+              />
             </motion.div>
           </div>
         </motion.div>

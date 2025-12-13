@@ -137,7 +137,7 @@ const StackStudio = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-blue-500/5 pt-16">
+        <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-purple-500/5 to-blue-500/10 pt-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <BlurInText
@@ -199,7 +199,7 @@ const StackStudio = () => {
         </section>
 
         {/* Why StackStudio Section */}
-        <section className="py-20 bg-gradient-to-b from-background to-accent/5">
+        <section className="py-20 bg-gradient-to-b from-background to-purple-500/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <BlurInText
@@ -226,7 +226,7 @@ const StackStudio = () => {
                   >
                     <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
                       <CardHeader>
-                        <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent/60 rounded-xl flex items-center justify-center mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                         <CardTitle className="text-xl font-heading text-primary">
@@ -345,7 +345,7 @@ const StackStudio = () => {
         </section>
 
         {/* Roadmap Section */}
-        <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
+        <section className="py-20 bg-gradient-to-b from-blue-500/5 to-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <BlurInText
@@ -372,7 +372,7 @@ const StackStudio = () => {
                   >
                     <Card className="h-full bg-gradient-card shadow-premium border-0">
                       <CardHeader>
-                        <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                         <CardTitle className="text-lg font-heading text-primary">
@@ -420,7 +420,7 @@ const StackStudio = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary via-accent to-primary">
+        <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-purple-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

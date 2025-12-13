@@ -7,6 +7,9 @@ import { lazy, Suspense } from "react";
 
 const Index = lazy(() => import("./pages/Index"));
 const StackStudio = lazy(() => import("./pages/StackStudio"));
+const C4Studio = lazy(() => import("./pages/C4Studio"));
+const WebKnot = lazy(() => import("./pages/WebKnot"));
+const Aldebate = lazy(() => import("./pages/Aldebate"));
 const Unbuilt = lazy(() => import("./pages/Unbuilt"));
 const VentureCloneAI = lazy(() => import("./pages/VentureCloneAI"));
 const RepoRadar = lazy(() => import("./pages/RepoRadar"));
@@ -34,6 +37,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/stackstudio" element={<StackStudio />} />
+            <Route path="/c4-studio" element={<C4Studio />} />
+            <Route path="/webknot" element={<WebKnot />} />
+            <Route path="/aldebate" element={<Aldebate />} />
             <Route path="/unbuilt" element={<Unbuilt />} />
             <Route path="/ventureclone-ai" element={<VentureCloneAI />} />
             <Route path="/reporadar" element={<RepoRadar />} />
