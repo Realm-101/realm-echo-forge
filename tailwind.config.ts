@@ -58,12 +58,21 @@ export default {
                                 realm: {
                                         primary: 'hsl(var(--realm-primary))',
                                         accent: 'hsl(var(--realm-accent))',
+                                },
+                                furry: {
+                                        forest: 'hsl(var(--furry-forest))',
+                                        tan: 'hsl(var(--furry-tan))',
+                                        stone: 'hsl(var(--furry-stone))',
+                                        brown: 'hsl(var(--furry-brown))',
+                                        sage: 'hsl(var(--furry-sage))',
                                 }
                         },
                         backgroundImage: {
                                 'gradient-hero': 'var(--gradient-hero)',
                                 'gradient-primary': 'var(--gradient-primary)',
                                 'gradient-card': 'var(--gradient-card)',
+                                'gradient-earthy': 'var(--gradient-earthy)',
+                                'gradient-fur-base': 'var(--gradient-fur-base)',
                         },
                         boxShadow: {
                                 'premium': 'var(--shadow-premium)',

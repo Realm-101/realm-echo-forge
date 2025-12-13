@@ -2,63 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Realm 101 Design System - Premium Development Ecosystem */
+/* Realm 101 Design System - Furry Block Theme with Natural & Earthy Colors */
 
 @layer base {
   :root {
+    /* Furry Block Core Colors - Earthy Palette */
+    --furry-forest: 120 35% 30%; /* Deep forest green #3D6B3D */
+    --furry-tan: 30 45% 55%; /* Warm tan/camel #C4956A */
+    --furry-stone: 0 0% 55%; /* Neutral gray stone #8C8C8C */
+    --furry-brown: 25 40% 35%; /* Earthy brown #7D5A3C */
+    --furry-sage: 100 20% 45%; /* Muted sage green #6B8C5A */
+    
     /* Core Brand Colors */
-    --realm-primary: 0 0% 20%; /* #333333 */
-    --realm-accent: 100 25% 35%; /* #4D6A4D */
-    --realm-background: 0 0% 98%;
-    --realm-foreground: 0 0% 15%;
+    --realm-primary: 25 30% 25%; /* Dark earthy brown */
+    --realm-accent: 120 35% 30%; /* Forest green */
+    --realm-background: 40 20% 97%; /* Warm off-white */
+    --realm-foreground: 25 25% 15%; /* Dark brown-black */
     
     /* Semantic Colors */
     --background: var(--realm-background);
     --foreground: var(--realm-foreground);
     
-    --card: 0 0% 100%;
+    --card: 40 15% 99%;
     --card-foreground: var(--realm-foreground);
     
-    --popover: 0 0% 100%;
+    --popover: 40 15% 99%;
     --popover-foreground: var(--realm-foreground);
     
     --primary: var(--realm-primary);
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 40 20% 97%;
     
     --secondary: 100 15% 92%;
     --secondary-foreground: var(--realm-primary);
     
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 40 10% 94%;
+    --muted-foreground: 25 15% 45%;
     
     --accent: var(--realm-accent);
-    --accent-foreground: 0 0% 98%;
+    --accent-foreground: 40 20% 97%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
     --ring: var(--realm-accent);
     
     --radius: 12px;
     
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--realm-primary)), hsl(var(--realm-accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--realm-accent)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    /* Furry Block Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--furry-brown)), hsl(var(--furry-forest)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--furry-brown)) 0%, hsl(var(--furry-forest)) 50%, hsl(var(--furry-tan)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(40 15% 99%) 0%, hsl(40 10% 96%) 100%);
+    --gradient-earthy: linear-gradient(135deg, hsl(var(--furry-forest)) 0%, hsl(var(--furry-sage)) 50%, hsl(var(--furry-tan)) 100%);
     
     /* Shadows */
-    --shadow-premium: 0 20px 40px -10px hsl(var(--realm-primary) / 0.1);
-    --shadow-glow: 0 0 30px hsl(var(--realm-accent) / 0.2);
-    --shadow-magnetic: 0 10px 25px -5px hsl(var(--realm-accent) / 0.3);
-    --shadow-fur: 0 8px 32px -8px hsl(var(--realm-primary) / 0.15), 0 2px 8px -2px hsl(var(--realm-accent) / 0.1);
+    --shadow-premium: 0 20px 40px -10px hsl(var(--furry-brown) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--furry-forest) / 0.2);
+    --shadow-magnetic: 0 10px 25px -5px hsl(var(--furry-forest) / 0.25);
+    --shadow-fur: 0 8px 32px -8px hsl(var(--furry-brown) / 0.2), 0 2px 8px -2px hsl(var(--furry-forest) / 0.1);
 
     /* Fur Texture Effects */
-    --gradient-fur-base: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--realm-accent)) 50%, hsl(var(--realm-primary)) 100%);
-    --gradient-fur-layer1: radial-gradient(ellipse at 20% 30%, hsl(var(--realm-accent) / 0.3) 0%, transparent 50%);
-    --gradient-fur-layer2: radial-gradient(ellipse at 80% 70%, hsl(var(--realm-primary) / 0.2) 0%, transparent 50%);
-    --gradient-fur-noise: repeating-linear-gradient(45deg, transparent, transparent 2px, hsl(var(--realm-accent) / 0.05) 2px, hsl(var(--realm-accent) / 0.05) 4px);
+    --gradient-fur-base: linear-gradient(135deg, hsl(var(--furry-forest)) 0%, hsl(var(--furry-tan)) 50%, hsl(var(--furry-stone)) 100%);
+    --gradient-fur-layer1: radial-gradient(ellipse at 20% 30%, hsl(var(--furry-forest) / 0.3) 0%, transparent 50%);
+    --gradient-fur-layer2: radial-gradient(ellipse at 80% 70%, hsl(var(--furry-tan) / 0.25) 0%, transparent 50%);
+    --gradient-fur-noise: repeating-linear-gradient(45deg, transparent, transparent 2px, hsl(var(--furry-sage) / 0.05) 2px, hsl(var(--furry-sage) / 0.05) 4px);
 
     /* Animations */
     --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,39 +75,39 @@
   }
 
   .dark {
-    --realm-background: 0 0% 8%;
-    --realm-foreground: 0 0% 95%;
+    --realm-background: 25 15% 8%;
+    --realm-foreground: 40 15% 92%;
     
     --background: var(--realm-background);
     --foreground: var(--realm-foreground);
     
-    --card: 0 0% 10%;
+    --card: 25 12% 12%;
     --card-foreground: var(--realm-foreground);
     
-    --popover: 0 0% 10%;
+    --popover: 25 12% 12%;
     --popover-foreground: var(--realm-foreground);
     
-    --primary: 0 0% 90%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 40 15% 88%;
+    --primary-foreground: 25 15% 10%;
     
-    --secondary: 0 0% 14%;
+    --secondary: 25 10% 16%;
     --secondary-foreground: var(--realm-foreground);
     
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 25 10% 16%;
+    --muted-foreground: 40 10% 65%;
     
-    --accent: 100 30% 55%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 120 30% 45%;
+    --accent-foreground: 25 15% 10%;
     
     --destructive: 0 62% 65%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 25 10% 22%;
+    --input: 25 10% 22%;
     --ring: var(--accent);
     
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(25 12% 12%) 0%, hsl(25 12% 10%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--furry-brown)) 0%, hsl(var(--accent)) 100%);
     --shadow-premium: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
     --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
   }
