@@ -25,7 +25,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Loader2, CheckCircle, Mail } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { apiRequest } from "@/lib/queryClient";
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -70,63 +70,35 @@ export const SignUpDialog = ({
     setIsSubmitting(true);
     
     try {
-      // Insert lead into Supabase
-      const { error } = await supabase
-        .from('leads')
-        .insert({
-          first_name: values.firstName,
-          last_name: values.lastName,
-          email: values.email,
-          company: values.company || null,
-        });
+      await apiRequest("POST", "/api/leads", values);
 
-      if (error) {
-        // Handle duplicate email error
-        if (error.code === '23505') {
-          toast({
-            title: "Already signed up",
-            description: "This email is already on our waitlist. We'll be in touch soon!",
-          });
-        } else {
-          throw error;
-        }
-      } else {
-        // Send confirmation email
-        try {
-          await supabase.functions.invoke('send-confirmation-email', {
-            body: {
-              firstName: values.firstName,
-              lastName: values.lastName,
-              email: values.email,
-              company: values.company,
-            },
-          });
-        } catch (emailError) {
-          console.error('Error sending confirmation email:', emailError);
-          // Don't fail the signup if email fails
-        }
-
-        setIsSuccess(true);
-        toast({
-          title: "Welcome to Realm 101!",
-          description: "We'll be in touch soon with your access details.",
-        });
-      }
+      setIsSuccess(true);
+      toast({
+        title: "Welcome to Realm 101!",
+        description: "We'll be in touch soon with your access details.",
+      });
       
-      // Close dialog after success
       setTimeout(() => {
         setIsOpen(false);
         setIsSuccess(false);
         form.reset();
       }, 2000);
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting form:', error);
-      toast({
-        title: "Something went wrong",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
+      
+      if (error.message.includes("409")) {
+        toast({
+          title: "Already signed up",
+          description: "This email is already on our waitlist. We'll be in touch soon!",
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -180,6 +152,7 @@ export const SignUpDialog = ({
                           {...field}
                           className="font-body"
                           disabled={isSubmitting}
+                          data-testid="input-firstName"
                         />
                       </FormControl>
                       <FormMessage />
@@ -198,6 +171,7 @@ export const SignUpDialog = ({
                           {...field}
                           className="font-body"
                           disabled={isSubmitting}
+                          data-testid="input-lastName"
                         />
                       </FormControl>
                       <FormMessage />
@@ -219,6 +193,7 @@ export const SignUpDialog = ({
                         {...field}
                         className="font-body"
                         disabled={isSubmitting}
+                        data-testid="input-email"
                       />
                     </FormControl>
                     <FormMessage />
@@ -238,6 +213,7 @@ export const SignUpDialog = ({
                         {...field}
                         className="font-body"
                         disabled={isSubmitting}
+                        data-testid="input-company"
                       />
                     </FormControl>
                     <FormMessage />
@@ -251,6 +227,7 @@ export const SignUpDialog = ({
                 variant="hero"
                 size="lg"
                 disabled={isSubmitting}
+                data-testid="button-submit"
               >
                 {isSubmitting ? (
                   <>
