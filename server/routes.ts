@@ -4,6 +4,52 @@ import { insertLeadSchema } from "@shared/schema";
 import { Resend } from "resend";
 
 export function registerRoutes(app: Express): void {
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = process.env.BASE_URL || "https://realm101.dev";
+    
+    const pages = [
+      { url: "/", priority: "1.0", changefreq: "weekly" },
+      { url: "/stackstudio", priority: "0.9", changefreq: "monthly" },
+      { url: "/c4-studio", priority: "0.9", changefreq: "monthly" },
+      { url: "/webknot", priority: "0.9", changefreq: "monthly" },
+      { url: "/aldebate", priority: "0.9", changefreq: "monthly" },
+      { url: "/unbuilt", priority: "0.9", changefreq: "monthly" },
+      { url: "/ventureclone-ai", priority: "0.9", changefreq: "monthly" },
+      { url: "/reporadar", priority: "0.9", changefreq: "monthly" },
+      { url: "/stackfast", priority: "0.9", changefreq: "monthly" },
+      { url: "/privacy", priority: "0.5", changefreq: "yearly" },
+      { url: "/terms", priority: "0.5", changefreq: "yearly" },
+    ];
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages
+  .map(
+    (page) => `  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <priority>${page.priority}</priority>
+    <changefreq>${page.changefreq}</changefreq>
+  </url>`
+  )
+  .join("\n")}
+</urlset>`;
+
+    res.type("application/xml");
+    res.send(sitemap);
+  });
+
+  app.get("/robots.txt", (req, res) => {
+    const baseUrl = process.env.BASE_URL || "https://realm101.dev";
+    
+    const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${baseUrl}/sitemap.xml`;
+
+    res.type("text/plain");
+    res.send(robots);
+  });
+
   app.post("/api/leads", async (req, res) => {
     try {
       const parseResult = insertLeadSchema.safeParse(req.body);
