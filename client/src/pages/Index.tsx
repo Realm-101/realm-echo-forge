@@ -155,7 +155,11 @@ const Index = () => {
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   From solo developers to enterprise teams, we're building the next generation of 
-                  development ecosystems that grow with you.
+                  development support platforms that grow with you.
+                </p>
+                <p className="text-lg text-muted-foreground mt-8 leading-relaxed font-semibold">
+                  Martin vanDeursen<br />
+                  <span className="font-normal">Builder</span>
                 </p>
               </motion.div>
               
