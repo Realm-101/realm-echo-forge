@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CookieConsent } from "@/components/ui/cookie-consent";
 import { motion } from "framer-motion";
-import { ArrowRight, Blocks, Code2, Lightbulb, Users, Target, Layers, Sparkles } from "lucide-react";
+import { ArrowRight, Blocks, Users, Target, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@assets/brand-dna-1765653077322_(Medium)_1765657315308.jpeg";
 import visionImage from "@assets/brand-dna-1765653316052_(Medium)_1765657315309.jpeg";
@@ -17,28 +17,28 @@ const products = [
   {
     title: "StackStudio",
     description: "Our flagship development ecosystem. A unified platform bringing together tools for ideation, planning, building, and scaling your projects.",
-    icon: Layers,
+    logoSrc: "/lovable-uploads/Logosmain/stack.png",
     link: "/stackstudio",
     color: "from-purple-500/20 to-blue-500/20",
   },
   {
     title: "C4-Studio",
     description: "AI-powered creative studio for multimedia generation, visual coding, and immersive development experiences.",
-    icon: Code2,
+    logoSrc: "/lovable-uploads/Logosmain/C4-small.png",
     link: "/c4-studio",
     color: "from-furry-forest/20 to-furry-sage/20",
   },
   {
     title: "The WebKnot",
     description: "Component curation and web development tools designed to streamline your frontend workflow.",
-    icon: Blocks,
+    logoSrc: "/lovable-uploads/Logosmain/logo1.png",
     link: "/webknot",
     color: "from-furry-tan/20 to-furry-brown/20",
   },
   {
-    title: "Aldebate",
+    title: "LLMArgument",
     description: "AI-driven debate and discussion platform for exploring ideas, arguments, and collaborative thinking.",
-    icon: Lightbulb,
+    logoSrc: "/lovable-uploads/Logosmain/LLMargumenttrans.png",
     link: "/aldebate",
     color: "from-furry-sage/20 to-furry-forest/20",
   },
@@ -231,7 +231,6 @@ const Index = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {products.map((product, index) => {
-                const IconComponent = product.icon;
                 return (
                   <motion.div
                     key={product.title}
@@ -243,8 +242,8 @@ const Index = () => {
                     <Link to={product.link} className="block h-full">
                       <Card className="h-full bg-gradient-card shadow-premium border-0 transition-all duration-300 hover:shadow-glow group">
                         <CardHeader>
-                          <div className={`w-16 h-16 bg-gradient-to-br ${product.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
-                            <IconComponent className="w-8 h-8 text-primary" />
+                          <div className={`w-16 h-16 bg-gradient-to-br ${product.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform p-2`}>
+                            <img src={product.logoSrc} alt={`${product.title} logo`} className="w-full h-full object-contain" />
                           </div>
                           <CardTitle className="text-2xl font-heading text-primary flex items-center gap-2">
                             {product.title}
