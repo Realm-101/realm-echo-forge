@@ -52,9 +52,13 @@ const C4Studio = () => {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
-              <BlurInText
-                text="C4-Studio"
-                className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-white mb-4"
+              <motion.img
+                src="/lovable-uploads/projects101/C4studio/Firefly_Gemini Flash_a commercial board for C4 studio by Realm101 694093.png"
+                alt="C4-Studio"
+                className="h-16 sm:h-20 lg:h-24 object-contain mx-auto mb-4"
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.8 }}
               />
               
               <motion.p
