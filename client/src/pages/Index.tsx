@@ -13,7 +13,14 @@ import heroImage from "@assets/brand-dna-1765653077322_(Medium)_1765657315308.jp
 import visionImage from "@assets/brand-dna-1765653316052_(Medium)_1765657315309.jpeg";
 import officeImage from "@assets/brand-dna-1764712443658_(Medium)_1765657315307.jpeg";
 
-const products = [
+const products: Array<{
+  title: string;
+  description: string;
+  logoSrc: string;
+  link: string;
+  color: string;
+  titleImageSrc?: string;
+}> = [
   {
     title: "StackStudio",
     description: "Our flagship development ecosystem. A unified platform bringing together tools for ideation, planning, building, and scaling your projects.",
@@ -25,7 +32,6 @@ const products = [
     title: "C4-Studio",
     description: "AI-powered creative studio for multimedia generation, visual coding, and immersive development experiences.",
     logoSrc: "/lovable-uploads/Logosmain/C4-small.png",
-    titleImageSrc: "/lovable-uploads/projects101/C4studio/Firefly_Gemini Flash_a commercial board for C4 studio by Realm101 694093.png",
     link: "/c4-studio",
     color: "from-furry-forest/20 to-furry-sage/20",
   },
