@@ -22,7 +22,7 @@ const tools = [
   {
     name: "C4-Studio",
     description: "AI creative studio",
-    logoSrc: "/lovable-uploads/Logosmain/Firefly_Gemini Flash_a commercial board for C4 studio by Realm101 694093.png",
+    logoSrc: "/lovable-uploads/Logosmain/C4-small.png",
     href: "/c4-studio",
     color: "from-furry-forest to-furry-sage",
     position: { x: -180, y: 40 },
