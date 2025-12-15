@@ -54,7 +54,7 @@ export const Header = () => {
               duration: 0.2
             }}
           >
-            <img src="/realm101-logo.png" alt="Realm 101 Logo" className="w-40 h-16 object-contain" />
+            <img src="/lovable-uploads/Logos/Realm101furtrans.png" alt="Realm 101 Logo" className="w-40 h-16 object-contain" />
           </motion.a>
 
           {/* Desktop Navigation */}
