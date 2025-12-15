@@ -10,7 +10,7 @@ const footerLinks = {
     { name: "StackStudio", href: "/stackstudio" },
     { name: "C4-Studio", href: "/c4-studio" },
     { name: "WebKnot", href: "/webknot" },
-    { name: "Aldebate", href: "/aldebate" },
+    { name: "LLMArgument", href: "/aldebate" },
   ],
   stackstudioTools: [
     { name: "Unbuilt", href: "/unbuilt" },
@@ -51,11 +51,8 @@ export const Footer = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">R</span>
-                  </div>
-                  <span className="text-xl font-heading font-bold">Realm 101</span>
+                <div className="mb-4">
+                  <img src="/lovable-uploads/Logos/Realm101furtrans.png" alt="Realm 101 Logo" className="h-16 object-contain" />
                 </div>
                 <p className="text-primary-foreground/80 font-body leading-relaxed mb-6">
                   Empowering developers with an inclusive ecosystem of premium tools for building, 
