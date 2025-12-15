@@ -55,7 +55,7 @@ const C4Studio = () => {
               <motion.img
                 src="/lovable-uploads/projects101/C4studio/Firefly_Gemini Flash_a commercial board for C4 studio by Realm101 694093.png"
                 alt="C4-Studio"
-                className="h-16 sm:h-20 lg:h-24 object-contain mx-auto mb-4"
+                className="w-full max-w-4xl object-contain mx-auto mb-6"
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8 }}
