@@ -110,12 +110,15 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                <Link to="/stackstudio">
-                  <MagneticButton variant="hero" size="xl" className="group">
-                    Explore Our Ecosystem
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </MagneticButton>
-                </Link>
+                <MagneticButton 
+                  variant="hero" 
+                  size="xl" 
+                  className="group"
+                  onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Explore Our Ecosystem
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </MagneticButton>
                 
                 <SignUpDialog>
                   <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white">
