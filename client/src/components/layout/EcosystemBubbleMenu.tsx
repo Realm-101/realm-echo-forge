@@ -14,7 +14,7 @@ const tools = [
   {
     name: "StackStudio",
     description: "Development ecosystem",
-    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    logoSrc: "/lovable-uploads/Logosmain/stack.png",
     href: "/stackstudio",
     color: "from-purple-500 to-blue-600",
     position: { x: 0, y: -120 },
@@ -22,7 +22,7 @@ const tools = [
   {
     name: "C4-Studio",
     description: "AI creative studio",
-    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    logoSrc: "/lovable-uploads/Logosmain/C4-small.png",
     href: "/c4-studio",
     color: "from-furry-forest to-furry-sage",
     position: { x: -180, y: 40 },
@@ -30,15 +30,15 @@ const tools = [
   {
     name: "The WebKnot",
     description: "Component curation",
-    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    logoSrc: "/lovable-uploads/Logosmain/logo1.png",
     href: "/webknot",
     color: "from-furry-tan to-furry-brown",
     position: { x: 180, y: 40 },
   },
   {
-    name: "Aldebate",
+    name: "LLMArgument",
     description: "AI debate platform",
-    logoSrc: "/lovable-uploads/Logos/Stackstudio.png",
+    logoSrc: "/lovable-uploads/Logosmain/LLMargumenttrans.png",
     href: "/aldebate",
     color: "from-furry-sage to-furry-forest",
     position: { x: 0, y: 160 },
