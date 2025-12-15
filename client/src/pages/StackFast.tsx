@@ -50,12 +50,12 @@ const StackFast = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-                <MagneticButton variant="outline" size="xl" className="group">
+                <MagneticButton variant="outline" size="xl" className="group" data-testid="button-notify">
                   <Bell className="mr-2 h-5 w-5" />
                   Notify Me
                 </MagneticButton>
                 
-                <Button variant="ghost" size="xl">
+                <Button variant="ghost" size="xl" data-testid="button-join-waitlist">
                   <Mail className="mr-2 h-5 w-5" />
                   Join Waitlist
                 </Button>
@@ -165,7 +165,7 @@ const StackFast = () => {
                     Join our exclusive waitlist and get early access to StackFast when it launches. 
                     Plus, receive special launch pricing and bonus features.
                   </p>
-                  <MagneticButton variant="hero" size="lg" className="w-full sm:w-auto">
+                  <MagneticButton variant="hero" size="lg" className="w-full sm:w-auto" data-testid="button-waitlist-cta">
                     Join the Waitlist
                   </MagneticButton>
                 </CardContent>

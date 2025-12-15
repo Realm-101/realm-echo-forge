@@ -72,6 +72,7 @@ export const Footer = () => {
                         whileTap={{ scale: 0.95 }}
                         target="_blank"
                         rel="noopener noreferrer"
+                        data-testid={`link-social-${social.name.toLowerCase()}`}
                       >
                         <IconComponent size={18} />
                       </motion.a>
@@ -96,6 +97,7 @@ export const Footer = () => {
                       <a
                         href={link.href}
                         className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
+                        data-testid={`link-footer-product-${link.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       >
                         {link.name}
                       </a>
@@ -121,6 +123,7 @@ export const Footer = () => {
                         href={link.href}
                         className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
                         {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        data-testid={`link-footer-tool-${link.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       >
                         {link.name}
                       </a>
@@ -146,6 +149,7 @@ export const Footer = () => {
                         href={link.href}
                         className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
                         {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        data-testid={`link-footer-company-${link.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       >
                         {link.name}
                       </a>
@@ -170,6 +174,7 @@ export const Footer = () => {
                       <a
                         href={link.href}
                         className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 font-body"
+                        data-testid={`link-footer-legal-${link.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       >
                         {link.name}
                       </a>

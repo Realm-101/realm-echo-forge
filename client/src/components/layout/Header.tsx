@@ -53,6 +53,7 @@ export const Header = () => {
             transition={{
               duration: 0.2
             }}
+            data-testid="link-logo"
           >
             <img src="/lovable-uploads/Logos/Realm101furtrans.png" alt="Realm 101 Logo" className="w-40 h-16 object-contain" />
           </motion.a>
@@ -71,6 +72,7 @@ export const Header = () => {
                     className="flex items-center gap-1 text-foreground hover:text-accent transition-colors duration-200 font-body cursor-pointer bg-transparent border-none"
                     whileHover={{ y: -2 }}
                     transition={{ duration: 0.2 }}
+                    data-testid="button-products-dropdown"
                   >
                     {link.name}
                     <ChevronDown className={cn("w-4 h-4 transition-transform", isProductsOpen && "rotate-180")} />
@@ -91,6 +93,7 @@ export const Header = () => {
                             to={product.href}
                             className="block px-4 py-3 hover:bg-muted/50 transition-colors"
                             onClick={() => setIsProductsOpen(false)}
+                            data-testid={`link-product-${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                           >
                             <div className="font-body font-medium text-foreground">{product.name}</div>
                             <div className="text-sm text-muted-foreground">{product.description}</div>
@@ -105,6 +108,7 @@ export const Header = () => {
                   key={link.name}
                   to={link.href}
                   className="text-foreground hover:text-accent transition-colors duration-200 font-body"
+                  data-testid="link-home"
                 >
                   <motion.span
                     whileHover={{ y: -2 }}
@@ -121,6 +125,7 @@ export const Header = () => {
                   className="text-foreground hover:text-accent transition-colors duration-200 font-body"
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
+                  data-testid={`link-${link.name.toLowerCase()}`}
                 >
                   {link.name}
                 </motion.a>
@@ -130,7 +135,7 @@ export const Header = () => {
             <ThemeToggle />
 
             <SignUpDialog>
-              <Button variant="fur" size="sm" className="font-body">
+              <Button variant="fur" size="sm" className="font-body" data-testid="button-start-building">
                 <span>Start Building</span>
               </Button>
             </SignUpDialog>
@@ -139,7 +144,7 @@ export const Header = () => {
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-2 md:hidden">
             <ThemeToggle />
-            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)} data-testid="button-mobile-menu">
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
           </div>
@@ -164,6 +169,7 @@ export const Header = () => {
                   to="/"
                   className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
                   onClick={() => setIsMenuOpen(false)}
+                  data-testid="link-mobile-home"
                 >
                   Home
                 </Link>
@@ -177,6 +183,7 @@ export const Header = () => {
                         to={product.href}
                         className="block text-foreground hover:text-accent transition-colors duration-200 font-body py-1"
                         onClick={() => setIsMenuOpen(false)}
+                        data-testid={`link-mobile-product-${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       >
                         {product.name}
                       </Link>
@@ -188,12 +195,13 @@ export const Header = () => {
                   href="#about"
                   className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
                   onClick={() => setIsMenuOpen(false)}
+                  data-testid="link-mobile-about"
                 >
                   About
                 </a>
 
                 <SignUpDialog>
-                  <Button variant="fur" className="w-full font-body mt-4">
+                  <Button variant="fur" className="w-full font-body mt-4" data-testid="button-mobile-start-building">
                     <span>Start Building</span>
                   </Button>
                 </SignUpDialog>

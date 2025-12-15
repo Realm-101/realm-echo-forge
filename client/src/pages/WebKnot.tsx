@@ -73,13 +73,13 @@ const WebKnot = () => {
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
                 <SignUpDialog>
-                  <MagneticButton variant="hero" size="xl" className="group">
+                  <MagneticButton variant="hero" size="xl" className="group" data-testid="button-early-access">
                     <Sparkles className="mr-2 h-5 w-5" />
                     Get Early Access
                   </MagneticButton>
                 </SignUpDialog>
                 
-                <Link to="/">
+                <Link to="/" data-testid="link-learn-more">
                   <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white">
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -116,7 +116,7 @@ const WebKnot = () => {
                   UXC transforms how teams discover and implement UI components.
                 </p>
                 <SignUpDialog>
-                  <Button variant="fur" size="lg">
+                  <Button variant="fur" size="lg" data-testid="button-uxc-waitlist">
                     <span className="flex items-center">
                       Join the Waitlist
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -174,7 +174,7 @@ const WebKnot = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium border-0">
+                    <Card className="h-full bg-gradient-card shadow-premium border-0" data-testid={`card-feature-${feature.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                       <CardHeader>
                         <div className="w-14 h-14 bg-gradient-to-br from-furry-tan to-furry-brown rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-7 h-7 text-white" />
@@ -207,7 +207,7 @@ const WebKnot = () => {
                 Ready to streamline your frontend workflow? Join the waitlist today.
               </p>
               <SignUpDialog>
-                <MagneticButton variant="hero" size="lg">
+                <MagneticButton variant="hero" size="lg" data-testid="button-early-access-bottom">
                   Get Early Access
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </MagneticButton>

@@ -120,12 +120,13 @@ const Unbuilt = () => {
                   size="xl" 
                   className="group"
                   onClick={() => window.open('https://Unbuilt.one', '_blank', 'noopener,noreferrer')}
+                  data-testid="button-join-beta"
                 >
                   Join Beta Waitlist
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
                 
-                <Button variant="outline" size="xl" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button variant="outline" size="xl" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} data-testid="button-learn-more">
                   Learn More
                 </Button>
               </motion.div>
@@ -175,7 +176,7 @@ const Unbuilt = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
+                    <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0" data-testid={`card-feature-${feature.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                       <CardHeader>
                         <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-6 h-6 text-white" />
@@ -216,7 +217,7 @@ const Unbuilt = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="h-full bg-gradient-card shadow-premium border-0">
+                  <Card className="h-full bg-gradient-card shadow-premium border-0" data-testid={`card-audience-${segment.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                     <CardHeader>
                       <CardTitle className="text-xl font-heading text-primary">
                         {segment.title}
@@ -301,6 +302,7 @@ const Unbuilt = () => {
                 size="xl"
                 className="bg-white text-primary hover:bg-white/90"
                 onClick={() => window.open('https://Unbuilt.one', '_blank', 'noopener,noreferrer')}
+                data-testid="button-join-beta-cta"
               >
                 Join the Beta Waitlist
               </MagneticButton>

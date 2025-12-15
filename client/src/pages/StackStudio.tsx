@@ -180,6 +180,7 @@ const StackStudio = () => {
                   size="xl" 
                   className="group"
                   onClick={handleStartBuilding}
+                  data-testid="button-start-building"
                 >
                   Start Building
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -189,6 +190,7 @@ const StackStudio = () => {
                   variant="outline" 
                   size="xl"
                   onClick={handleViewDemo}
+                  data-testid="button-view-demo"
                 >
                   <Sparkles className="mr-2 h-5 w-5" />
                   View Demo
@@ -224,7 +226,7 @@ const StackStudio = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0">
+                    <Card className="h-full bg-gradient-card shadow-premium hover:shadow-glow transition-all duration-300 border-0" data-testid={`card-why-${item.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                       <CardHeader>
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-6 h-6 text-white" />
@@ -316,6 +318,7 @@ const StackStudio = () => {
                           variant="default"
                           className="w-full group"
                           asChild
+                          data-testid={`button-explore-${tool.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                         >
                           <a href={tool.link}>
                             Explore
@@ -406,7 +409,7 @@ const StackStudio = () => {
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left font-heading text-primary">
+                    <AccordionTrigger className="text-left font-heading text-primary" data-testid={`accordion-faq-${index}`}>
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground font-body leading-relaxed">

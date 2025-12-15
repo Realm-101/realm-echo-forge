@@ -235,12 +235,13 @@ const RepoRadar = () => {
                 size="xl" 
                 className="group"
                 onClick={() => window.open('https://reporadar.online/', '_blank')}
+                data-testid="button-start-analysis"
               >
                   Start Free Analysis
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
                 
-                <Button variant="outline" size="xl">
+                <Button variant="outline" size="xl" data-testid="button-watch-demo">
                   Watch Demo
                 </Button>
               </motion.div>
@@ -525,6 +526,7 @@ const RepoRadar = () => {
                         variant={tier.highlighted ? "outline" : "default"}
                         className={`w-full ${tier.highlighted ? 'bg-white text-accent hover:bg-white/90' : ''}`}
                         size="lg"
+                        data-testid={`button-pricing-${tier.name.toLowerCase()}`}
                       >
                         {tier.cta}
                       </Button>

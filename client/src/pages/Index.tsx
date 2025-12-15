@@ -121,13 +121,14 @@ const Index = () => {
                   size="xl" 
                   className="group"
                   onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                  data-testid="button-explore-ecosystem"
                 >
                   Explore Our Ecosystem
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
                 
                 <SignUpDialog>
-                  <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white">
+                  <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white" data-testid="button-early-access">
                     <Sparkles className="mr-2 h-5 w-5" />
                     Get Early Access
                   </Button>
@@ -209,7 +210,7 @@ const Index = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium border-0">
+                    <Card className="h-full bg-gradient-card shadow-premium border-0" data-testid={`card-value-${value.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                       <CardHeader>
                         <div className="w-14 h-14 bg-gradient-to-br from-furry-forest to-furry-sage rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-7 h-7 text-white" />
@@ -253,8 +254,8 @@ const Index = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Link to={product.link} className="block h-full">
-                      <Card className="h-full bg-gradient-card shadow-premium border-0 transition-all duration-300 hover:shadow-glow group">
+                    <Link to={product.link} className="block h-full" data-testid={`link-product-${product.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
+                      <Card className="h-full bg-gradient-card shadow-premium border-0 transition-all duration-300 hover:shadow-glow group" data-testid={`card-product-${product.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                         <CardHeader>
                           <div className={`w-16 h-16 bg-gradient-to-br ${product.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform p-2`}>
                             <img src={product.logoSrc} alt={`${product.title} logo`} className="w-full h-full object-contain" />
@@ -321,7 +322,7 @@ const Index = () => {
                 viewport={{ once: true }}
               >
                 <SignUpDialog>
-                  <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white">
+                  <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white" data-testid="button-join-journey">
                     Join Our Journey
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -343,11 +344,11 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <SignUpDialog>
-                  <MagneticButton variant="hero" size="lg">
+                  <MagneticButton variant="hero" size="lg" data-testid="button-contact-us">
                     Contact Us
                   </MagneticButton>
                 </SignUpDialog>
-                <Link to="/stackstudio">
+                <Link to="/stackstudio" data-testid="link-explore-stackstudio">
                   <Button variant="outline" size="lg">
                     Explore StackStudio
                   </Button>

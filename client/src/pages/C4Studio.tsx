@@ -87,13 +87,13 @@ const C4Studio = () => {
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
                 <SignUpDialog>
-                  <MagneticButton variant="hero" size="xl" className="group">
+                  <MagneticButton variant="hero" size="xl" className="group" data-testid="button-early-access">
                     <Sparkles className="mr-2 h-5 w-5" />
                     Get Early Access
                   </MagneticButton>
                 </SignUpDialog>
                 
-                <Link to="/">
+                <Link to="/" data-testid="link-learn-more">
                   <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white">
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -127,7 +127,7 @@ const C4Studio = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium border-0 transition-all duration-300 hover:shadow-glow">
+                    <Card className="h-full bg-gradient-card shadow-premium border-0 transition-all duration-300 hover:shadow-glow" data-testid={`card-product-${product.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                       <CardHeader>
                         <div className={`w-16 h-16 bg-gradient-to-br ${product.color} rounded-xl flex items-center justify-center mb-4`}>
                           <IconComponent className="w-8 h-8 text-primary" />
@@ -160,7 +160,7 @@ const C4Studio = () => {
                 Join the waitlist and be among the first to experience the future of creative tools.
               </p>
               <SignUpDialog>
-                <MagneticButton variant="hero" size="lg">
+                <MagneticButton variant="hero" size="lg" data-testid="button-join-waitlist">
                   Join the Waitlist
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </MagneticButton>

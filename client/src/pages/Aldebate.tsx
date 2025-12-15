@@ -74,13 +74,13 @@ const Aldebate = () => {
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
                 <SignUpDialog>
-                  <MagneticButton variant="hero" size="xl" className="group">
+                  <MagneticButton variant="hero" size="xl" className="group" data-testid="button-early-access">
                     <Sparkles className="mr-2 h-5 w-5" />
                     Get Early Access
                   </MagneticButton>
                 </SignUpDialog>
                 
-                <Link to="/">
+                <Link to="/" data-testid="link-learn-more">
                   <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white/30 text-white">
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -158,7 +158,7 @@ const Aldebate = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-gradient-card shadow-premium border-0">
+                    <Card className="h-full bg-gradient-card shadow-premium border-0" data-testid={`card-feature-${feature.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
                       <CardHeader>
                         <div className="w-14 h-14 bg-gradient-to-br from-furry-sage to-furry-forest rounded-xl flex items-center justify-center mb-4">
                           <IconComponent className="w-7 h-7 text-white" />
@@ -191,7 +191,7 @@ const Aldebate = () => {
                 Join the waitlist and be among the first to experience AI-powered discussions.
               </p>
               <SignUpDialog>
-                <MagneticButton variant="hero" size="lg">
+                <MagneticButton variant="hero" size="lg" data-testid="button-join-waitlist">
                   Join the Waitlist
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </MagneticButton>
