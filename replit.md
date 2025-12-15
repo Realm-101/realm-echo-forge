@@ -43,3 +43,16 @@ A landing page for Realm 101, a developer ecosystem platform. Features a waitlis
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run db:push` - Push schema changes to database
+
+## Recent Changes (Dec 15, 2025)
+- Fixed MagneticButton component to properly forward refs using React.forwardRef (fixes DialogTrigger compatibility)
+- Added comprehensive data-testid attributes to all interactive elements for testing support
+- Verified dark mode implementation (ThemeProvider with next-themes already in place)
+- Verified SignUpDialog properly implements loading/error states with apiRequest
+
+## Features
+- **Dark Mode**: Fully implemented with ThemeToggle in header (light/dark/system)
+- **Waitlist Signup**: Form with validation, loading states, error handling, and toast notifications
+- **Product Landing Pages**: StackStudio, C4-Studio, WebKnot, Aldebate, RepoRadar, StackFast, VentureCloneAI, Unbuilt
+- **Interactive Components**: MagneticButton, BlurInText, EcosystemBubbleMenu
+- **Cookie Consent**: GDPR-compliant cookie consent dialog
