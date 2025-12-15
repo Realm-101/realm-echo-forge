@@ -24,7 +24,7 @@ const products = [
   {
     title: "C4-Studio",
     description: "AI-powered creative studio for multimedia generation, visual coding, and immersive development experiences.",
-    logoSrc: "/lovable-uploads/Logosmain/C4-small.png",
+    logoSrc: "/lovable-uploads/Logosmain/Firefly_Gemini Flash_a commercial board for C4 studio by Realm101 694093.png",
     link: "/c4-studio",
     color: "from-furry-forest/20 to-furry-sage/20",
   },

@@ -22,7 +22,7 @@ const tools = [
   {
     name: "C4-Studio",
     description: "AI creative studio",
-    logoSrc: "/lovable-uploads/Logosmain/C4-small.png",
+    logoSrc: "/lovable-uploads/Logosmain/Firefly_Gemini Flash_a commercial board for C4 studio by Realm101 694093.png",
     href: "/c4-studio",
     color: "from-furry-forest to-furry-sage",
     position: { x: -180, y: 40 },
@@ -139,7 +139,6 @@ export const EcosystemBubbleMenu = ({ isOpen, onClose }: EcosystemBubbleMenuProp
                   className="block w-36 h-36 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-500/30 to-indigo-600/25 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl flex items-center justify-center cursor-pointer transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-emerald-400/10 before:via-transparent before:to-rose-400/10 after:absolute after:inset-0 after:bg-gradient-to-bl after:from-yellow-300/15 before:via-transparent after:to-cyan-400/15"
                   whileHover={{ boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}
                   onClick={onClose}
-                  {...(tool.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
                     <img
                       src={tool.logoSrc}
