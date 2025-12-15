@@ -117,8 +117,10 @@ const WebKnot = () => {
                 </p>
                 <SignUpDialog>
                   <Button variant="fur" size="lg">
-                    Join the Waitlist
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <span className="flex items-center">
+                      Join the Waitlist
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </span>
                   </Button>
                 </SignUpDialog>
               </motion.div>

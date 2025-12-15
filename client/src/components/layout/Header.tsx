@@ -131,7 +131,7 @@ export const Header = () => {
 
             <SignUpDialog>
               <Button variant="fur" size="sm" className="font-body">
-                Start Building
+                <span>Start Building</span>
               </Button>
             </SignUpDialog>
           </nav>
@@ -194,7 +194,7 @@ export const Header = () => {
 
                 <SignUpDialog>
                   <Button variant="fur" className="w-full font-body mt-4">
-                    Start Building
+                    <span>Start Building</span>
                   </Button>
                 </SignUpDialog>
               </div>
