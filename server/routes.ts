@@ -79,12 +79,14 @@ Sitemap: ${baseUrl}/sitemap.xml`;
           await resend.emails.send({
             from: "Realm 101 <register@beta.realm101.com>",
             to: [email],
-            template: "stackstudio",
-            props: {
-              firstName,
-              lastName,
-              email,
-              company,
+            template: {
+              id: "stackstudio",
+              variables: {
+                FIRST_NAME: firstName,
+                LAST_NAME: lastName,
+                EMAIL: email,
+                COMPANY: company || "",
+              },
             },
           });
         } catch (emailError) {
