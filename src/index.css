@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Realm 101 Design System - Premium Development Ecosystem */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --realm-primary: 0 0% 20%; /* #333333 */
+    --realm-accent: 100 25% 35%; /* #4D6A4D */
+    --realm-background: 0 0% 98%;
+    --realm-foreground: 0 0% 15%;
+    
+    /* Semantic Colors */
+    --background: var(--realm-background);
+    --foreground: var(--realm-foreground);
+    
+    --card: 0 0% 100%;
+    --card-foreground: var(--realm-foreground);
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--realm-foreground);
+    
+    --primary: var(--realm-primary);
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 100 15% 92%;
+    --secondary-foreground: var(--realm-primary);
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: var(--realm-accent);
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: var(--realm-accent);
+    
+    --radius: 12px;
+    
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--realm-primary)), hsl(var(--realm-accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--realm-accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-premium: 0 20px 40px -10px hsl(var(--realm-primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--realm-accent) / 0.2);
+    --shadow-magnetic: 0 10px 25px -5px hsl(var(--realm-accent) / 0.3);
+    --shadow-fur: 0 8px 32px -8px hsl(var(--realm-primary) / 0.15), 0 2px 8px -2px hsl(var(--realm-accent) / 0.1);
+
+    /* Fur Texture Effects */
+    --gradient-fur-base: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--realm-accent)) 50%, hsl(var(--realm-primary)) 100%);
+    --gradient-fur-layer1: radial-gradient(ellipse at 20% 30%, hsl(var(--realm-accent) / 0.3) 0%, transparent 50%);
+    --gradient-fur-layer2: radial-gradient(ellipse at 80% 70%, hsl(var(--realm-primary) / 0.2) 0%, transparent 50%);
+    --gradient-fur-noise: repeating-linear-gradient(45deg, transparent, transparent 2px, hsl(var(--realm-accent) / 0.05) 2px, hsl(var(--realm-accent) / 0.05) 4px);
+
+    /* Animations */
+    --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fur: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .dark {
+    --realm-background: 0 0% 8%;
+    --realm-foreground: 0 0% 95%;
+    
+    --background: var(--realm-background);
+    --foreground: var(--realm-foreground);
+    
+    --card: 0 0% 10%;
+    --card-foreground: var(--realm-foreground);
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: var(--realm-foreground);
+    
+    --primary: 0 0% 90%;
+    --primary-foreground: 0 0% 10%;
+    
+    --secondary: 0 0% 14%;
+    --secondary-foreground: var(--realm-foreground);
+    
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: 100 30% 55%;
+    --accent-foreground: 0 0% 10%;
+    
+    --destructive: 0 62% 65%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: var(--accent);
+    
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--realm-primary)) 0%, hsl(var(--accent)) 100%);
+    --shadow-premium: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

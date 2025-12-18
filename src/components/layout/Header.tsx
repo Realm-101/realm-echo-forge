@@ -1,0 +1,144 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { EcosystemBubbleMenu } from "./EcosystemBubbleMenu";
+import { SignUpDialog } from "@/components/forms/SignUpDialog";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBubbleMenuOpen, setIsBubbleMenuOpen] = useState(false);
+  const navLinks = [{
+    name: "Home",
+    href: "/"
+  }, {
+    name: "Ecosystem",
+    href: "#ecosystem"
+  }, {
+    name: "About",
+    href: "#about"
+  }];
+  return <motion.header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border" initial={{
+    y: -100
+  }} animate={{
+    y: 0
+  }} transition={{
+    duration: 0.6,
+    ease: "easeOut"
+  }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <motion.a
+            href="/"
+            className="flex items-center space-x-2"
+            whileHover={{
+              scale: 1.05
+            }}
+            transition={{
+              duration: 0.2
+            }}
+          >
+            <img src="/realm101-logo.png" alt="Realm 101 Logo" className="w-40 h-16 object-contain" />
+          </motion.a>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4">
+            {navLinks.map(link => 
+              link.name === "Ecosystem" ? (
+                <motion.button
+                  key={link.name}
+                  onClick={() => setIsBubbleMenuOpen(true)}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body cursor-pointer bg-transparent border-none"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {link.name}
+                </motion.button>
+              ) : (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-body"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {link.name}
+                </motion.a>
+              )
+            )}
+            
+            <ThemeToggle />
+
+            <SignUpDialog>
+              <Button variant="fur" size="sm" className="font-body">
+                Start Building
+              </Button>
+            </SignUpDialog>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="flex items-center space-x-2 md:hidden">
+            <ThemeToggle />
+            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isMenuOpen && <motion.nav className="md:hidden py-4 border-t border-border" initial={{
+          opacity: 0,
+          height: 0
+        }} animate={{
+          opacity: 1,
+          height: "auto"
+        }} exit={{
+          opacity: 0,
+          height: 0
+        }} transition={{
+          duration: 0.3
+        }}>
+              <div className="flex flex-col space-y-4">
+                {navLinks.map(link => 
+                  link.name === "Ecosystem" ? (
+                    <button
+                      key={link.name}
+                      onClick={() => {
+                        setIsBubbleMenuOpen(true);
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2 text-left bg-transparent border-none cursor-pointer"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-foreground hover:text-accent transition-colors duration-200 font-body py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  )
+                )}
+
+                <SignUpDialog>
+                  <Button variant="fur" className="w-full font-body">
+                    Start Building
+                  </Button>
+                </SignUpDialog>
+              </div>
+            </motion.nav>}
+        </AnimatePresence>
+      </div>
+
+      {/* Ecosystem Bubble Menu */}
+      <EcosystemBubbleMenu isOpen={isBubbleMenuOpen} onClose={() => setIsBubbleMenuOpen(false)} />
+    </motion.header>;
+};
