@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   root: path.resolve(__dirname, "client"),
   server: {
+    port: 8080,
     allowedHosts: true,
   },
   resolve: {
