@@ -9,6 +9,33 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
+// Input validation helpers
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 255;
+}
+
+function isValidName(name: string): boolean {
+  // Allow letters, spaces, hyphens, apostrophes - common in names
+  const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
+  return nameRegex.test(name) && name.length >= 1 && name.length <= 100;
+}
+
+function isValidCompany(company: string | undefined): boolean {
+  if (!company) return true; // Optional field
+  return company.length <= 200;
+}
+
+// HTML escaping to prevent XSS in emails
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 interface ConfirmationEmailRequest {
   firstName: string;
   lastName: string;
@@ -23,11 +50,65 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, email, company }: ConfirmationEmailRequest = await req.json();
+    // Verify authorization header exists (Supabase anon key)
+    const authHeader = req.headers.get("authorization");
+    const apiKeyHeader = req.headers.get("apikey");
+    
+    if (!authHeader && !apiKeyHeader) {
+      console.error("Missing authorization: no auth header or apikey provided");
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const body = await req.json();
+    const { firstName, lastName, email, company }: ConfirmationEmailRequest = body;
+
+    // Input validation
+    if (!firstName || typeof firstName !== "string" || !isValidName(firstName)) {
+      console.error("Invalid firstName:", firstName);
+      return new Response(
+        JSON.stringify({ error: "Invalid first name provided" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (!lastName || typeof lastName !== "string" || !isValidName(lastName)) {
+      console.error("Invalid lastName:", lastName);
+      return new Response(
+        JSON.stringify({ error: "Invalid last name provided" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (!email || typeof email !== "string" || !isValidEmail(email)) {
+      console.error("Invalid email:", email);
+      return new Response(
+        JSON.stringify({ error: "Invalid email address provided" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (!isValidCompany(company)) {
+      console.error("Invalid company:", company);
+      return new Response(
+        JSON.stringify({ error: "Invalid company name provided" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Sanitize inputs for HTML email content
+    const safeFirstName = escapeHtml(firstName.trim());
+    const safeLastName = escapeHtml(lastName.trim());
+    const safeEmail = escapeHtml(email.trim());
+    const safeCompany = company ? escapeHtml(company.trim()) : undefined;
+
+    console.log("Sending confirmation email to:", safeEmail);
 
     const emailResponse = await resend.emails.send({
       from: "Realm 101 <onboarding@resend.dev>",
-      to: [email],
+      to: [email.trim()], // Use validated but not HTML-escaped email for actual sending
       subject: "Welcome to Realm 101 - Your Developer Ecosystem Awaits",
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
@@ -37,7 +118,7 @@ const handler = async (req: Request): Promise<Response> => {
           </div>
           
           <div style="background: white; padding: 40px 30px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <h2 style="color: #333333; margin: 0 0 20px 0; font-size: 24px;">Hi ${firstName}!</h2>
+            <h2 style="color: #333333; margin: 0 0 20px 0; font-size: 24px;">Hi ${safeFirstName}!</h2>
             
             <p style="color: #666666; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
               Thank you for joining our waitlist! We're excited to have you as part of the Realm 101 community.
@@ -70,7 +151,7 @@ const handler = async (req: Request): Promise<Response> => {
           </div>
           
           <div style="text-align: center; padding: 20px; color: #999999; font-size: 12px;">
-            <p style="margin: 0;">© 2024 Realm 101. All rights reserved.</p>
+            <p style="margin: 0;">&copy; 2024 Realm 101. All rights reserved.</p>
             <p style="margin: 5px 0 0 0;">
               If you have any questions, reply to this email or contact us at support@realm101.com
             </p>
@@ -81,7 +162,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Confirmation email sent successfully:", emailResponse);
 
-    return new Response(JSON.stringify(emailResponse), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -89,9 +170,11 @@ const handler = async (req: Request): Promise<Response> => {
       },
     });
   } catch (error: any) {
+    // Log detailed error for debugging, but return generic message to client
     console.error("Error in send-confirmation-email function:", error);
+    
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Failed to send confirmation email. Please try again later." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
